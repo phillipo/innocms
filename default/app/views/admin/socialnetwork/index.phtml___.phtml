@@ -1,0 +1,128 @@
+<?php
+/*
+Author: Cesar Caballero Gallego
+Date: 10/05/2012 - 14:04:19
+File: index.phtml
+*/
+
+?>
+
+
+			<div class="pages">
+
+				<h1>Redes sociales</h1>
+				
+				<!-- BREADCRUMB -->
+				<?php echo View::partial('admin/breadcrumb')?>
+				<!-- fBREADCRUMB -->					
+				
+				<?php echo Form::openMultipart('admin/socialnetwork/index/').EOL ?>
+				
+				<!-- TABS -->
+				<div class="tabbable tabs-left">
+			
+					<!-- CONTROL TABS -->
+					<ul class="nav nav-tabs">
+						<li class="active"><a href="#ui-prefs-social" data-toggle="tab">Sociales</a></li>		
+						<li><a href="#ui-prefs-photo" data-toggle="tab">Fotografía</a></li>
+						<li><a href="#ui-prefs-video" data-toggle="tab">Video</a></li>
+						<li><a href="#ui-prefs-others" data-toggle="tab">Otras</a></li>
+					</ul>
+					<!-- fCONTROL TABS -->
+				
+					<!-- CONTENT TABS -->
+					<div class="tab-content">		
+						
+						<!-- Sociales -->
+						<div id="ui-prefs-social" class="tab-pane active">
+						
+							<fieldset><legend>Redes sociales</legend>
+							<?php $socialnet = array(
+									array('key'=>'facebook','name'=>'Facebook','url'=>'http://www.facebook.com'),
+									array('key'=>'googleplus','name'=>'Google+','url'=>'https://plus.google.com/'),
+									array('key'=>'linkedin','name'=>'LinkedIn','url'=>'https://www.linkedin.com'),
+								) ?>
+							<?php foreach ($socialnet as $social) {?>
+							
+							<div class="frow">
+							<label for="preferences_preferences_<?php echo $social['key'] ?>"><?php echo $social['name'] ?></label>
+							<?php echo Form::text('preferences.preferences_'.$social['key'],'class="span5" placeholder="'.$social['url'].'"','') ?>
+							</div>
+
+							<?php } ?>
+							</fieldset>				
+				
+						</div>
+						<!-- fSociales -->
+						
+						<!-- Fotografía -->
+						<div id="ui-prefs-photo" class="tab-pane">
+
+							<fieldset><legend>Redes de imágenes</legend>
+							<?php $socialnet = array(
+									array('key'=>'deviantart', 'name'=>'DeviantArt','url'=>'http://www.deviantart.com'),
+									array('key'=>'tumblr', 'name'=>'Tumblr','url'=>'http://www.tumblr.com'),
+									array('key'=>'flickr','name'=>'Flickr','url'=>'http://wwww.flickr.com'),
+									array('key'=>'instagram','name'=>'Instagram','url'=>'http://www.instagram.com'),									
+									
+								) ?>
+							<?php foreach ($socialnet as $social) {?>
+							
+							<div class="frow">
+							<label for="preferences_preferences_<?php echo $social['key'] ?>"><?php echo $social['name'] ?></label>
+							<?php echo Form::text('preferences.preferences_'.$social['key'],'class="span5" placeholder="'.$social['url'].'"','') ?>
+							</div>
+
+							<?php } ?>	
+							</fieldset>					
+				
+						</div>			
+						<!-- fFotografia -->	
+						
+						<!-- Video -->
+						<div id="ui-prefs-video" class="tab-pane">
+						
+							<fieldset><legend>Redes de vídeo</legend>
+							<?php $socialnet = array(
+									array('key'=>'youtube','name'=>'Youtube','url'=>'http://www.youtube.com'),
+									array('key'=>'vimeo','name'=>'Vimeo','url'=>'http://www.vimeo.com'),
+								) ?>
+							<?php foreach ($socialnet as $social) {?>
+							
+							<div class="frow">
+							<label for="preferences_preferences_<?php echo $social['key'] ?>"><?php echo $social['name'] ?></label>
+							<?php echo Form::text('preferences.preferences_'.$social['key'],'class="span5" placeholder="'.$social['url'].'"','') ?>
+							</div>
+
+							<?php } ?>
+							</fieldset>						
+				
+				
+						</div>			
+						<!-- fVideo -->									
+						
+					</div>
+					<!-- fCONTENT TABS -->
+					
+				</div>
+				<!-- fTABS -->
+				
+				<!-- ACTIONS -->
+				<div class="form-actions well">
+
+					<div class="span6">
+						<button class="btn btn-danger">Descartar</button>
+					</div>
+					<div class="span6">
+						<div class="btn-group pull-right">
+							<input type="submit" value="Guardar datos" class="btn btn-primary" />
+							<input type="button" value="Vista previa" class="btn" />							
+						</div>
+					</div>
+					
+				</div>
+				<!-- fACTIONS -->				
+				
+				<?php echo Form::close() ?>
+
+			</div>

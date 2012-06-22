@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svnroot/kumbia/!svn/ver/839/branches/1.0/core/libs/cache/drivers
+END
+APC_cache.php
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svnroot/kumbia/!svn/ver/669/branches/1.0/core/libs/cache/drivers/APC_cache.php
+END
+nixfile_cache.php
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svnroot/kumbia/!svn/ver/839/branches/1.0/core/libs/cache/drivers/nixfile_cache.php
+END
+file_cache.php
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svnroot/kumbia/!svn/ver/669/branches/1.0/core/libs/cache/drivers/file_cache.php
+END
+sqlite_cache.php
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svnroot/kumbia/!svn/ver/669/branches/1.0/core/libs/cache/drivers/sqlite_cache.php
+END
+memsqlite_cache.php
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svnroot/kumbia/!svn/ver/669/branches/1.0/core/libs/cache/drivers/memsqlite_cache.php
+END

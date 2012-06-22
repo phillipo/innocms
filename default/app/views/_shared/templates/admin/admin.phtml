@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="<?php echo APP_CHARSET ?>">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title><?php echo $prefs->preferences_title ?></title>
+<?php Tag::css('reset') ?>
+<?php Tag::css('style') ?>
+<?php Tag::css('admin/structure') ?>
+<?php Tag::css('admin/jquery-ui/style') ?>
+<?php Tag::css('admin/innocms-grid') ?>
+<?php Tag::css('admin/gh-buttons') ?>
+<?php Tag::css('admin/iconicStroke/iconic_stroke') ?>
+<?php echo Html::includeCss() ?>
+
+<!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+<!--[if lt IE 9]>
+<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+
+<?php
+$scripts = array(
+	'jquery/jquery.min','jquery/jquery.cookie','jquery/jquery.metadata',
+	'jquery/jquery-ui.min','jquery/jquery.easing','jquery/jquery.cycle','jquery/jquery.treeview','jquery/jquery.slugit',
+	'tiny_mce/jquery.tinymce','jquery/datepicker/jquery.ui.datepicker-es',
+	'main'
+);	
+
+foreach ($scripts as $js) {
+	echo Tag::js('admin/'.$js).chr(10);	
+}
+?>
+</head>
+<body id="adminLayout">
+
+	<!-- HEADER -->
+	<div id="header" class="row-fluid">
+		<?php echo View::partial('admin/header',0,array('prefs'=>$prefs)) ?>
+	</div>
+	<div class="clear"><!-- BR --></div>
+	<!-- fHEADER -->
+		
+	<!-- NAVBAR -->
+	<div id="navbar">
+		<?php echo View::partial('admin/navbar') ?>
+	</div>	
+	<div class="clear"><!-- BR --></div>	
+	<!-- fNAVBAR -->	
+	
+	<!-- SUBNAVBAR -->
+	<div id="subnavbar" class="row-fluid">
+		<?php echo View::partial('admin/subnavbar') ?>
+	</div>
+	<div class="clear"><!-- BR --></div>
+	<!-- fSUBNAVBAR -->
+
+	<!-- CONTENT -->
+	<div class="row-fluid">
+
+		<!-- LATERAL MENU -->	
+		<div id="menubar" class="col_2">
+			<?php echo View::partial('admin/createItems') ?>
+			<hr />
+			<?php echo View::partial('admin/statusList') ?>
+			<hr />
+			<?php echo View::partial('admin/categoryList') ?>
+		</div>
+		<!-- fLATERAL MENU -->
+	
+	
+		<!-- VIEW -->
+		<div id="content" class="col_9">	
+		<?php echo View::content(); ?>
+		</div>
+		<!-- fVIEW -->		
+	
+	</div>
+	<!-- fCONTENT -->
+		
+</body>
+</html>

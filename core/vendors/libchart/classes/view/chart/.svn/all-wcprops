@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svnroot/kumbia/!svn/ver/514/branches/1.0/core/vendors/libchart/classes/view/chart
+END
+LineChart.php
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svnroot/kumbia/!svn/ver/514/branches/1.0/core/vendors/libchart/classes/view/chart/LineChart.php
+END
+BarChart.php
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svnroot/kumbia/!svn/ver/514/branches/1.0/core/vendors/libchart/classes/view/chart/BarChart.php
+END
+Chart.php
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svnroot/kumbia/!svn/ver/514/branches/1.0/core/vendors/libchart/classes/view/chart/Chart.php
+END
+HorizontalBarChart.php
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svnroot/kumbia/!svn/ver/514/branches/1.0/core/vendors/libchart/classes/view/chart/HorizontalBarChart.php
+END
+VerticalBarChart.php
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svnroot/kumbia/!svn/ver/514/branches/1.0/core/vendors/libchart/classes/view/chart/VerticalBarChart.php
+END
+PieChart.php
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svnroot/kumbia/!svn/ver/514/branches/1.0/core/vendors/libchart/classes/view/chart/PieChart.php
+END

@@ -1,0 +1,89 @@
+<?php
+/*
+Author: Cesar Caballero Gallego
+Date: 18/04/2012 - 20:40:10
+File: page_tree.php
+*/
+
+class pageTree {
+
+	private $value;
+	private $lista;
+	private $type;
+	private $properties;
+	
+	public function __construct() {	
+	
+	}
+	
+	// Crear el arbol
+	private function _draw($id = 0) {
+
+		// Parametros
+		$hasChilds = false;
+		$lista = '';
+		$n = 0;
+		$tab = "\t";
+		
+		// Listado de hijos
+		$listado = Load::model('page')->getList(array('parentId'=>$id,'order'=>'page_sort_order ASC'));
+		
+		// Comprobamos hijos
+		if (sizeof($listado) > 0 && !$hasChilds) {
+			$lista .= $tab.'<ul class="unstyled nested"><li class="arrastrable">Colocar aquí</li>'.EOL;
+			$hasChilds = true;
+		}
+		
+		// Recorremos listado
+		foreach ($listado as $item) {
+		
+			// Extraemos hijos del item
+			$children = Load::model('page')->getList(array('parentId'=>$item->page_id,'order'=>'page_attribute_value'));
+		
+			// Tipo de nodo
+			$lastClass = ($n == (sizeof($listado)-1)) ? ' class="isLast nested"' : ' class="isNode nested"';
+					
+			// Input fields
+			$input = '<div class="btn-group"><a href="#" class="btn btn-mini">'.$item->page_attribute_value.'</a> '.Html::linkAction('edit/'.$item->page_id.'/'.Innocms::refererEncode(), 'Editar','class="btn btn-mini"').Html::linkAction('remove/'.$item->page_id, 'Borrar','class="ui-removeIt btn btn-mini btn-danger"').'</div>';
+			
+			// Si hay hijos hacemos recursion
+			if (sizeof($children) > 0) {
+				$lista .= '<li id="item-'.$item->page_id.'" '.$lastClass.'>'.$input.''.EOL;
+				$lista .= self::_draw($item->page_id).EOL;
+				$lista .= '</li>'.EOL;
+			} else {
+				$lista .= '<li id="item-'.$item->page_id.'" '.$lastClass.'>'.$input.'<ul class="isLast nested unstyled"></ul></li>'.EOL;
+			}
+		
+			$n++;
+		
+		}
+		
+		// Cerramos si no hay más hijos
+		if ($hasChilds)	$lista .= '</ul>'.EOL;
+		
+		// Devolvemos lista
+		return $lista;
+		
+		
+		
+		
+	}
+	
+
+	// Muestra el resultado de un arbol segun parametros
+	public function show($id = 0) {
+
+		// Draw
+		return self::_draw($id);
+			
+	}
+	
+	
+	//**************************** PRIVATE METHODS */
+		
+	
+		
+}
+
+?>	

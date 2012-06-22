@@ -1,0 +1,251 @@
+<?php
+/*
+Creado por: Phillipo
+Fecha: 05/04/2011 16:59:36
+Fichero: edit.phtml
+*/
+?>
+	
+			<div id="main" class="pages">
+			
+			<!-- OPCIONES -->
+				<div class="sheet-options row-fluid span11">
+			
+					<div class="span7">
+						<h1>Editar categoria</h1>
+					</div>
+			
+					<div class="span5">
+			
+						<div class=" pull-right">
+			
+							<div class="btn-group">
+								<a class="btn" href="#"> Acciones...</a> <a
+									class="btn dropdown-toggle" data-toggle="dropdown" href="#"> <span
+									class="caret"></span>
+								</a>
+								<ul class="dropdown-menu">
+									<li><?php echo Html::linkAction('copy','Duplicar','id="copy-'.$category->id.'" title="Crear un contenido igual" class="ui-copyIt"') ?></li>
+									<li><?php echo Html::linkAction('move','Mover','id="move-'.$category->id.'" title="Mover el contenido a otra categoria" class="ui-moveIt"') ?></li>
+									<li class="divider">&nbsp;</li>
+									<li><?php echo Html::linkAction('delete','Borrar','id="remove-'.$category->id.'" title="Eliminar este contenido" class="removeIt"') ?></li>
+								</ul>
+			
+							</div>
+			
+						</div>
+			
+					</div>
+			
+				</div>
+				<!-- fOPCIONES -->
+							
+				<div class="clearfix"><!-- BR --></div>	
+			
+				<!-- BREADCRUMB -->
+				<?php echo View::partial('admin/breadcrumb')?>
+				<!-- fBREADCRUMB -->
+				
+				<?php echo Form::openMultipart('admin/category/edit/'.$category->id.'/'.base64_encode($referer)).EOL ?>
+				<?php echo Form::hidden('category.content_language_id','','1').EOL ?>
+				<?php echo Form::hidden('category.content_type','','category').EOL ?>
+				<?php echo Form::hidden('category.content_image_id','', $category->content_image_id).EOL ?>
+				<?php echo Form::hidden('category.content_slug','class="ui-slug-result"',$category->content_slug).EOL ?>
+		
+				<?php View::content() ?>
+				
+				<div class="tabbable tabs-left">			
+				
+					<!-- CONTROLS TABS -->
+					<ul class="nav nav-tabs">
+						<li class="active"><a href="#ui-content-content" data-toggle="tab">Datos generales</a></li>
+						<li><a href="#ui-content-image" data-toggle="tab">Imagen destacada</a></li>
+						<li><a href="#ui-content-seo" data-toggle="tab">SEO</a></li>
+						<li><a href="#ui-content-settings" data-toggle="tab">Propiedades</a></li>
+						<li><a href="#ui-content-history" data-toggle="tab">Historial</a></li>
+					</ul>				
+					<!-- fCONTROLS TABS -->
+				
+					<!-- CONTENT TABS -->
+					<div class="tab-content">
+						
+						<!-- PESTAÑA GENERAL -->
+						<div id="ui-content-content" class="tab-pane active">
+						
+							<fieldset><legend>Datos generales</legend>	
+						
+								<div class="frow">
+								<label for="attributes_title">Título</label>
+								<?php echo Form::text('attributes.title','class="span12 ui-slug"',$attributes->title).EOL ?>
+								</div>			
+							
+							</fieldset>
+							
+							<fieldset><legend>Contenidos</legend>
+							
+								<div class="frow">					
+									<label for="attributes_content">Descripción<span class="form-helper">( Texto resumido usado para listados )</span></label>
+									<?php echo Form::textarea('attributes.content','class="ui-tinyContent span12"',$attributes->content) ?>					
+								</div>					
+							
+							</fieldset>
+		
+							<fieldset><legend>Relaciones</legend>
+							
+								<div class="frow">					
+									<label for="category_content_parent_id">Categoria superior</label>	
+									<?php echo Form::select('category.content_parent_id', $categorySelect->show(0,"-"), null, $category->content_parent_id); ?>				
+								</div>					
+							
+							</fieldset>
+							
+							
+						</div>	
+						<!-- fPESTAÑA GENERAL -->
+						
+						<div class="clearfix"><!-- BR --></div>
+		
+						<!-- PESTAÑA IMAGENES -->
+						<div id="ui-content-image" class="tab-pane">
+				
+							<fieldset><legend>IMAGEN DESTACADA</legend>
+				
+								<div class="row-fluid">
+				
+									<div class="span5">
+										<div id="imagePreview">
+											<?php if (!empty($featuredImage)) { ?>
+											<img src="/admin/filebrowser/resize/<?php echo $featuredImage->content_slug ?>/auto/400/400/100">
+											<?php } ?>
+										</div>
+										<div id="imageInfo"></div>
+									</div>
+				
+									<div class="span5">			
+										<fieldset>
+											<legend>Asociar imagen</legend>
+											<a class="btn ui-modal-launch ui-upload-browser" data-toggle="modal" href="#myModal" ><span class="icon-search"></span> Abrir localizador de imágenes</a>
+										</fieldset>
+				
+									</div>
+				
+								</div>
+				
+							</fieldset>
+				
+						</div>
+						<!-- fPESTAÑA IMAGEN -->
+						
+						<div class="clearfix"><!-- BR --></div>
+						
+						
+						<!-- PESTAÑA SEO -->
+						<div id="ui-content-seo" class="tab-pane">	
+						
+							<fieldset><legend>Información para buscadores (Google, Yahoo, Terra, Ask...)</legend>
+							
+							<div class="frow">
+								<label for="attributes_seotitle">Titulo SEO</label>
+								<?php echo Form::text('attributes.seotitle','class="span12"', $attributes->seotitle).EOL ?>
+							</div>
+							
+							<div class="frow">
+								<label for="attributes_seodesc">Descripción SEO<span id="attributes_seodescLimit" class="form-helper">(1/200 caracteres)</span></label>
+								<?php echo Form::textarea('attributes.seodesc','class="span12 ui-limited limit200"', $attributes->seodesc).EOL ?>
+							</div>
+							
+							<div class="frow">
+								<label for="attributes_seotags">Etiquetas SEO<span class="form-helper">( palabra1, palabra2, frase1, frase2 )</span></label>
+								<?php echo Form::text('attributes.seotags','class="span12"', $attributes->seotags).EOL ?>
+							</div>
+							
+							</fieldset>
+											
+						</div>
+						<!-- fPESTAÑA SEO -->
+											
+						<div class="clearfix"><!-- BR --></div>				
+						
+						<!-- PESTAÑA PROPIEDADES -->
+						<div id="ui-content-settings" class="tab-pane">	
+							
+							<fieldset><legend>Visibilidad</legend>
+							
+								<div class="controls">
+									<div class="frow">
+										<label for="category_content_status0" class="radio">
+										<?php echo Form::radio('category.content_status', 'public', '', ($category->content_status == 'public' ?  true: false)).EOL ?>
+										Publicado
+										</label>
+									</div>
+									
+									<div class="frow">
+										<label for="category_content_status1" class="radio">
+										<?php echo Form::radio('category.content_status', 'private', '', ($category->content_status == 'private' ? true : false)).EOL ?>
+										Privado
+										</label>			
+									</div>
+								</div>
+																			
+							</fieldset>	
+											
+							<fieldset><legend>Ordenación</legend>
+							
+								<div class="frow">
+									<label for="category_content_sort_order">Orden:</label>
+									<?php echo Form::text('category.content_sort_order', 'class="span3"', $category->content_sort_order) ?>
+								</div>
+								
+							</fieldset>			
+												
+						</div>					
+						<!-- fPESTAÑA PROPIEDADES -->				
+						
+						<div class="clearfix"><!-- BR --></div>				
+						
+						<!-- PESTAÑA HISTORIAL -->
+						<div id="ui-content-history" class="tab-pane">
+							
+							<fieldset><legend>Historial de modificaciones</legend>
+							
+								<div class="frow">
+									<label for="content_created_at">Creado:</label>			
+									<?php echo Form::text('content_created_at','class="noneditable span2" readonly="readonly"', Innocms::humanDate($category->content_created_at, 'd-m-Y H:i:s')); ?>
+								</div>
+								<div class="frow">
+									<label for="content_modified_in">Modificado:</label>
+									<?php echo Form::text('content_modified_in','class="noneditable span2" readonly="readonly"', Innocms::humanDate($category->content_modified_in, 'd-m-Y H:i:s')); ?>
+								</div>
+								
+							</fieldset>
+						
+						</div>
+						<!-- fPESTAÑA HISTORIAL -->
+				
+					</div>
+					<!-- CONTENT TABS -->
+				
+				</div>			
+				<p>&nbsp;</p>
+		
+				<!-- ACTIONS -->
+				<div class="form-actions well">
+
+					<div class="span6">
+						<?php echo Html::link($referer,'Descartar','class="btn btn-danger"'); ?>
+					</div>
+					<div class="span6">
+						<div class="btn-group pull-right">
+							<input type="submit" value="Guardar datos" class="btn btn-primary" />
+							<input type="button" value="Vista previa" class="btn" />							
+						</div>
+					</div>
+					
+				</div>
+				<!-- fACTIONS -->
+					
+				
+				<?php echo Form::close() ?>
+				
+			</div>
+			

@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svnroot/kumbia/!svn/ver/915/branches/1.0/core/views/errors
+END
+no_action.phtml
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svnroot/kumbia/!svn/ver/915/branches/1.0/core/views/errors/no_action.phtml
+END
+no_controller.phtml
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svnroot/kumbia/!svn/ver/915/branches/1.0/core/views/errors/no_controller.phtml
+END
+exception.phtml
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svnroot/kumbia/!svn/ver/743/branches/1.0/core/views/errors/exception.phtml
+END

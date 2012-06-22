@@ -1,0 +1,181 @@
+<?php
+/*
+Author: Cesar Caballero Gallego
+Date: 26/04/2012 - 21:00:20
+File: optionsLists.php
+*/
+?>
+
+<div id="pageList-options">
+
+	<?php $baseUrl = Router::get('controller_path') ?>
+	
+	<?php if (in_array(Router::get('controller'), array('page'))) { ?>
+					
+				<div class="row-fluid pill">
+	
+					<div class="span6">
+						<div class="pull-left">
+							<div class="btn-group" id="optionsList">
+								<?php echo Html::link($baseUrl.'/duplicate', 'Duplicar','class="ui-duplicateThem btn btn-mini"')?>
+								<?php echo Html::link($baseUrl.'/move', 'Mover','class="ui-moveThem btn btn-mini"')?>
+								<?php echo Html::link($baseUrl.'/remove', 'Borrar','class=" ui-removeThem btn btn-danger btn-mini"')?>
+							</div>
+						</div>
+					</div>
+					
+					<div class="span6">
+						<div class="pull-right">
+							<div class="btn-group" data-toggle="buttons-radio">
+								<?php echo Html::link($baseUrl.'/', 'Todos','class="ui-filterList btn btn-mini"')?>
+								<?php echo Html::link($baseUrl.'/index/public', 'Publico','class="ui-filterList btn btn-mini"')?>
+								<?php echo Html::link($baseUrl.'/index/private', 'Oculto','class="ui-filterList btn btn-mini"')?>
+								<?php echo Html::link($baseUrl.'/index/draft', 'Borrador','class="ui-filterList btn btn-mini"')?>
+							</div>
+						</div>
+					</div>
+					
+				</div>	
+	
+	<?php } else if (in_array(Router::get('controller'), array('content'))) { ?>
+					
+				<div class="row-fluid pill">
+	
+					<div class="span6">
+						<div class="pull-left">
+							<div class="btn-group" id="optionsList">
+								<?php echo Html::link($baseUrl.'/duplicate', 'Duplicar','class="ui-duplicateThem btn btn-mini"')?>
+								<?php echo Html::link($baseUrl.'/move', 'Mover','class="ui-moveThem btn btn-mini"')?>
+								<?php echo Html::link($baseUrl.'/remove', 'Borrar','class=" ui-removeThem btn btn-danger btn-mini"')?>
+							</div>
+						</div>
+					</div>
+					
+					<div class="span6">
+						<div class="pull-right">
+							<div class="btn-group" data-toggle="buttons-radio">
+								<?php echo Html::link($baseUrl.'/index/'.$category.'/', 'Todos','class="ui-filterList btn btn-mini"')?>
+								<?php echo Html::link($baseUrl.'/index/'.$category.'/public', 'Publico','class="ui-filterList btn btn-mini"')?>
+								<?php echo Html::link($baseUrl.'/index/'.$category.'/private', 'Oculto','class="ui-filterList btn btn-mini"')?>
+								<?php echo Html::link($baseUrl.'/index/'.$category.'/draft', 'Borrador','class="ui-filterList btn btn-mini"')?>
+							</div>
+						</div>
+					</div>
+					
+				</div>				
+				
+	<?php } else if (in_array(Router::get('controller'),array('category'))) { ?>
+				
+				<div class="row-fluid pill">
+	
+					<div class="span6">
+						<div class="pull-left">
+							<div class="btn-group" id="optionsList">
+								<?php echo Html::link($baseUrl.'/duplicate', 'Duplicar','class="ui-duplicateThem btn btn-mini"')?>
+								<?php echo Html::link($baseUrl.'/move', 'Mover','class="ui-moveThem btn btn-mini"')?>
+								<?php echo Html::link($baseUrl.'/remove', 'Borrar','class=" ui-removeThem btn btn-danger btn-mini"')?>
+							</div>
+						</div>
+					</div>
+					
+					<div class="span6">
+						<div class="pull-right">
+							<div class="btn-group" data-toggle="buttons-radio">
+								<?php echo Html::link($baseUrl.'/index/'.$category.'/', 'Todos','class="ui-filterList btn btn-mini"')?>
+								<?php echo Html::link($baseUrl.'/index/'.$category.'/public', 'Publico','class="ui-filterList btn btn-mini"')?>
+								<?php echo Html::link($baseUrl.'/index/'.$category.'/private', 'Oculto','class="ui-filterList btn btn-mini"')?>						
+							</div>
+						</div>
+					</div>
+					
+				</div>	
+	
+	<?php } else if (in_array(Router::get('controller'),array('set'))) { ?>
+				
+				<div class="row-fluid pill">
+	
+					<div class="span6">
+						<div class="pull-left">
+							<div class="btn-group" id="optionsList">
+								<?php echo Html::link($baseUrl.'/duplicate', 'Duplicar','class="ui-duplicateThem btn btn-mini"')?>
+								<?php echo Html::link($baseUrl.'/move', 'Mover','class="ui-moveThem btn btn-mini"')?>
+								<?php echo Html::link($baseUrl.'/remove', 'Borrar','class=" ui-removeThem btn btn-danger btn-mini"')?>
+							</div>
+						</div>
+					</div>
+					
+					<div class="span6">
+						<div class="pull-right">
+							<div class="btn-group" data-toggle="buttons-radio">
+								<?php echo Html::link($baseUrl.'/index/', 'Todos','class="ui-filterList btn btn-mini"')?>
+								<?php echo Html::link($baseUrl.'/index/public', 'Publico','class="ui-filterList btn btn-mini"')?>
+								<?php echo Html::link($baseUrl.'/index/private', 'Oculto','class="ui-filterList btn btn-mini"')?>
+							</div>
+						</div>
+					</div>
+					
+				</div>	
+				
+	<?php } else if (in_array(Router::get('controller'),array('users','usergroup','userrole'))) { ?>			
+				
+				<div class="row-fluid pill">
+	
+					<div class="span6">
+						<div class="pull-left">
+							<div class="btn-group" id="optionsList">
+								<?php echo Html::link($baseUrl.'/remove', 'Borrar','class=" ui-removeThem btn btn-danger btn-mini"')?>
+							</div>
+						</div>
+					</div>
+					
+					<div class="span6">
+						<div class="pull-right">
+							<div class="btn-group" data-toggle="buttons-radio">
+								<?php echo Html::linkAction(Router::get('action').'/all','<span class="icon-home"></span> Todos','class="ui-filterList btn btn-mini"') ?>
+								<?php echo Html::linkAction(Router::get('action').'/active','<span class="icon-home"></span> Activos','class="ui-filterList btn btn-mini"') ?>
+								<?php echo Html::linkAction(Router::get('action').'/inactive','<span class="icon-home"></span> Bloqueados','class="ui-filterList btn btn-mini"') ?>
+							</div>
+						</div>
+					</div>
+					
+				</div>	
+				
+	<?php } else if (Router::get('controller') == 'filebrowser') { ?>
+	
+				<div class="row-fluid pill">
+	
+					<div class="span6">
+						<div class="pull-left">
+							<div class="btn-group" id="optionsList">
+								<?php echo Html::link($baseUrl.'/duplicate', 'Duplicar','class="ui-duplicateThem btn btn-mini"')?>
+								<?php echo Html::link($baseUrl.'/move', 'Mover','class="ui-moveThem btn btn-mini"')?>
+								<?php echo Html::link($baseUrl.'/remove', 'Borrar','class=" ui-removeThem btn btn-danger btn-mini"')?>
+							</div>
+						</div>
+					</div>
+					
+					<?php
+					if (Router::get('action') == 'remote') {
+						$baseUrl .= '/'.Router::get('action').'/';
+					} else {
+						$baseUrl .= '/'.Router::get('action').'/'.$category;
+					} 
+					?>
+					<div class="span6">
+						<div class="pull-right">
+							<div class="btn-group" data-toggle="buttons-radio">						
+								<?php echo Html::link($baseUrl.'/all','<span class="icon-home"></span> Todos','class="ui-filterList btn btn-mini"') ?>
+								<?php echo Html::link($baseUrl.'/docs','<span class="icon-file"></span> Documentos','class="ui-filterList btn btn-mini"') ?>				
+								<?php echo Html::link($baseUrl.'/images','<span class="icon-picture"></span> Imágenes','class="ui-filterList btn btn-mini"') ?>
+								<?php echo Html::link($baseUrl.'/audio','<span class="icon-music"></span> Audio','class="ui-filterList btn btn-mini"') ?>
+								<?php echo Html::link($baseUrl.'/others','<span class="icon-briefcase"></span> Otros','class="ui-filterList btn btn-mini"') ?>																	
+							</div>
+						</div>
+					</div>
+					
+				</div>	
+	
+	
+	<?php } ?>
+
+</div>

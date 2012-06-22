@@ -1,0 +1,51 @@
+<?php
+/*
+Author: Cesar Caballero Gallego
+Date: 29/05/2012 - 12:41:33
+File: structure.phtml
+*/
+?>
+
+			<div id="main" class="pages">
+								
+				<h1>Estructuración</h1>
+					
+				<!-- BREADCRUMB -->
+				<?php echo View::partial('admin/breadcrumb')?>
+				<!-- fBREADCRUMB -->			
+				
+				<?php View::content() ?>	
+				
+				<!-- ACTIONS -->
+				<div class="form-actions well">
+
+					<div class="span6">
+						<?php echo Html::linkAction('create/'.Innocms::refererEncode(),'Añadir página','class="btn btn-primary"'); ?>
+						<?php echo Html::link('#','Activar borrado de páginas','class="btn btn-danger" id="ui-removePageItems"'); ?>
+					</div>
+					
+				</div>
+				<!-- fACTIONS -->
+				
+				<div id="structurePages" class="well">
+								
+					<h2>Estructura</h2>
+
+					<?php if (sizeof($pageList)) {
+						$pageTree = new pageTree();
+						echo $pageTree->show(0);
+					 } else {
+					 ?>
+					<!-- noITEMS -->
+					<p>Aún no has creado ninguna página!! A que esperas!!!</p>
+					<!-- fnoITEMS -->
+					<?php 	
+					 }
+					 ?>
+				
+				</div>	
+				
+				
+				
+				
+			</div>			

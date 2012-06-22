@@ -1,0 +1,191 @@
+<?php
+/*
+Author: Cesar Caballero Gallego
+Date: 18/04/2012 - 20:40:10
+File: category_tree.php
+*/
+
+class categoryTree {
+
+	private $value;
+	private $lista;
+	private $type;
+	
+	public function __construct($type) {	
+		$this->type = $type;		
+	}
+	
+	// Muestra una lista en formato hereditario
+	public function drawNested($id = 0, $checked = null, $key = "-") {
+		
+		// Parametros
+		$hasChilds = false;
+		$lista = '';
+		$tab = "\t";
+
+		// Listado de hijos
+		$listado = Load::model('content')->getList(0,1000, array('parentId'=>$id,'content_type'=>'category'));
+		
+		// Comprobamos hijos
+		if (sizeof($listado) > 0 && !$hasChilds) {
+			$lista .= $tab.'<ul class="treeNested">'.EOL;
+			$hasChilds = true;
+		}
+
+		// Recorremos listado
+		foreach ($listado as $item) {
+			
+			// Extraemos hijos del item
+			$children = Load::model('content')->getList(0,1000,array('parentId'=>$item->id,'content_type'=>'category'));
+			
+			$checkClass = ($item->id == $checked) ? ' checked' : '';
+			
+			// Si hay hijos hacemos recursion
+			if (sizeof($children) > 0) {
+				$lista .= '<li>'.$key.' <span class="label'.$checkClass.'">'.$item->content_attribute_value.'</span>'.EOL;
+				$lista .= self::drawNested($item->id, $checked, $key.$key).EOL;
+				$lista .= '</li>'.EOL;
+			} else {
+				$lista .= '<li>'.$key.' <span class="label'.$checkClass.'">'.$item->content_attribute_value.'</span></li>'.EOL;
+			}
+			
+		}		
+		
+		// Cerramos si no hay más hijos
+		if ($hasChilds)	$lista .= '</ul>'.EOL;
+		
+		// Devolvemos lista
+		return $lista;
+		
+	}
+	
+	// Muestra una lista en formato hereditario 
+	public function drawCollapse($id = 0, $checked = null) {
+	
+		// Parametros
+		$hasChilds = false;
+		$lista = '';
+		$tab = "\t";
+	
+		// Listado de hijos
+		$listado = Load::model('content')->getList(0,1000, array('parentId'=>$id,'content_type'=>'category'));
+	
+		// Comprobamos hijos
+		if (sizeof($listado) > 0 && !$hasChilds) {
+			$lista .= $tab.'<ul class="treeCollapse">'.EOL;
+			$hasChilds = true;
+		}
+	
+		// Recorremos listado
+		foreach ($listado as $item) {
+	
+			// Extraemos hijos del item
+			$children = Load::model('content')->getList(0,1000,array('parentId'=>$item->id,'content_type'=>'category'));
+			
+			// Elemento seleccionado
+			$checkClass = ($item->id == $checked) ? ' checked' : '';
+	
+			// Si hay hijos hacemos recursion
+			if (sizeof($children) > 0) {
+				$lista .= '<li><span class="open">&nbsp;</span><span class="label'.$checkClass.'">'.$item->content_attribute_value.'</span>'.EOL;
+				$lista .= self::drawCollapse($item->id, $checked).EOL;
+				$lista .= '</li>'.EOL;
+			} else {
+				$lista .= '<li><span class="none">&nbsp;</span><span class="label'.$checkClass.'">'.$item->content_attribute_value.'</span></li>'.EOL;
+			}
+	
+		}
+	
+		// Cerramos si no hay más hijos
+		if ($hasChilds)	$lista .= '</ul>'.EOL;
+	
+		// Devolvemos lista
+		return $lista;
+	
+	}
+	
+	// Muestra una lista para seleccionar solo un elemento
+	private function drawRadio($id = 0, $checked = null, $tab = "\t") {
+		
+		// Parametros
+		$hasChilds = false;
+		$lista = '';
+		$n = 0;
+		
+		// Listado de hijos
+		$listado = Load::model('content')->getList(0,1000, array('parentId'=>$id,'content_type'=>'category'));
+		
+		// Comprobamos hijos
+		if (sizeof($listado) > 0 && !$hasChilds) {
+			$lista .= $tab.'<ul class="treeSelect">'.EOL;
+			$hasChilds = true;
+		}
+		
+		// Recorremos listado
+		foreach ($listado as $item) {
+		
+			// Extraemos hijos del item
+			$children = Load::model('content')->getList(0,1000,array('parentId'=>$item->id,'content_type'=>'category'));
+			
+			// Tipo de nodo
+			$lastClass = ($n == (sizeof($listado)-1)) ? ' class="isLast"' : ' class="isNode"';
+		
+			// Si hay hijos hacemos recursion
+			if (sizeof($children) > 0) {
+				$lista .= '<li'.$lastClass.'><input type="radio" name="listado" id="itemCatList_'.$item->id.'" /><label for="itemCatList_'.$item->id.'">'.$item->content_attribute_value.'</label>'.EOL;
+				$lista .= self::drawRadio($item->id).EOL;
+				$lista .= '</li>'.EOL;
+			} else {
+				$lista .= '<li'.$lastClass.'><input type="radio" name="listado" id="itemCatList_'.$item->id.'" /><label for="itemCatList_'.$item->id.'">'.$item->content_attribute_value.'</label></li>'.EOL;
+			}
+			
+			$n++;
+		
+		}
+		
+		// Cerramos si no hay más hijos
+		if ($hasChilds)	$lista .= '</ul>'.EOL;
+		
+		// Devolvemos lista
+		return $lista;		
+		
+		
+	}
+	
+
+	// Muestra el resultado de un arbol segun parametros
+	public function show($params = array()) {
+		
+		// Parametros
+		if (isset($params['id'])) $id = $params['id'];
+		else $id = 0;
+		
+		// Parametros
+		if (isset($params['checked'])) $checked = $params['checked'];
+		else $checked = 0;
+		
+		// Parametros
+		if (isset($params['key'])) $key = $params['key'];
+		else $key = '-';		
+		
+		switch ($this->type) {
+			
+			case 'radio':
+				return self::drawRadio($id, $checked,"\t\t\t");
+			break;
+
+			case 'collapse':
+				return self::drawCollapse($id, $checked);
+			break;
+									
+			default:
+				return self::drawNested($id, $checked, $key , "\t\t\t");
+			break;
+			
+		}
+			
+	}
+		
+}
+
+?>	

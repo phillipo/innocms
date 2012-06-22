@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svnroot/kumbia/!svn/ver/909/branches/1.0/core/libs/auth/adapters
+END
+kerberos5_auth.php
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svnroot/kumbia/!svn/ver/909/branches/1.0/core/libs/auth/adapters/kerberos5_auth.php
+END
+model_auth.php
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svnroot/kumbia/!svn/ver/909/branches/1.0/core/libs/auth/adapters/model_auth.php
+END
+digest_auth.php
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svnroot/kumbia/!svn/ver/909/branches/1.0/core/libs/auth/adapters/digest_auth.php
+END
+radius_auth.php
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svnroot/kumbia/!svn/ver/909/branches/1.0/core/libs/auth/adapters/radius_auth.php
+END

@@ -1,0 +1,113 @@
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svnroot/kumbia/!svn/ver/514/branches/1.0/core/libs/filter/base_filter
+END
+lower_filter.php
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svnroot/kumbia/!svn/ver/514/branches/1.0/core/libs/filter/base_filter/lower_filter.php
+END
+alpha_filter.php
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svnroot/kumbia/!svn/ver/514/branches/1.0/core/libs/filter/base_filter/alpha_filter.php
+END
+md5_filter.php
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svnroot/kumbia/!svn/ver/514/branches/1.0/core/libs/filter/base_filter/md5_filter.php
+END
+alnum_filter.php
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svnroot/kumbia/!svn/ver/514/branches/1.0/core/libs/filter/base_filter/alnum_filter.php
+END
+stripslashes_filter.php
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svnroot/kumbia/!svn/ver/514/branches/1.0/core/libs/filter/base_filter/stripslashes_filter.php
+END
+striptags_filter.php
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svnroot/kumbia/!svn/ver/514/branches/1.0/core/libs/filter/base_filter/striptags_filter.php
+END
+htmlspecialchars_filter.php
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svnroot/kumbia/!svn/ver/514/branches/1.0/core/libs/filter/base_filter/htmlspecialchars_filter.php
+END
+int_filter.php
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svnroot/kumbia/!svn/ver/514/branches/1.0/core/libs/filter/base_filter/int_filter.php
+END
+date_filter.php
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svnroot/kumbia/!svn/ver/514/branches/1.0/core/libs/filter/base_filter/date_filter.php
+END
+stripspace_filter.php
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svnroot/kumbia/!svn/ver/514/branches/1.0/core/libs/filter/base_filter/stripspace_filter.php
+END
+numeric_filter.php
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svnroot/kumbia/!svn/ver/514/branches/1.0/core/libs/filter/base_filter/numeric_filter.php
+END
+htmlentities_filter.php
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svnroot/kumbia/!svn/ver/514/branches/1.0/core/libs/filter/base_filter/htmlentities_filter.php
+END
+addslashes_filter.php
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svnroot/kumbia/!svn/ver/514/branches/1.0/core/libs/filter/base_filter/addslashes_filter.php
+END
+digits_filter.php
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svnroot/kumbia/!svn/ver/514/branches/1.0/core/libs/filter/base_filter/digits_filter.php
+END
+ipv4_filter.php
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svnroot/kumbia/!svn/ver/514/branches/1.0/core/libs/filter/base_filter/ipv4_filter.php
+END
+nl2br_filter.php
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svnroot/kumbia/!svn/ver/514/branches/1.0/core/libs/filter/base_filter/nl2br_filter.php
+END
+upper_filter.php
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svnroot/kumbia/!svn/ver/514/branches/1.0/core/libs/filter/base_filter/upper_filter.php
+END
+trim_filter.php
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svnroot/kumbia/!svn/ver/514/branches/1.0/core/libs/filter/base_filter/trim_filter.php
+END

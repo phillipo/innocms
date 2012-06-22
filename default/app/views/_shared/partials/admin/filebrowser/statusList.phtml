@@ -1,0 +1,19 @@
+<?php
+/*
+Author: Cesar Caballero Gallego
+Date: 07/02/2012 - 20:26:30
+File: statusList.phtml
+*/
+?>
+
+			<h3>Set / Colecciones</h3>
+
+			<ul class="nav nav-list">
+				<li><?php echo Html::linkAction('index/all/all', 'Todos') ?></li>
+				<?php foreach ($setList as $set) { ?>
+				<li><?php echo Html::linkAction('index/'.$set->content_slug.'/'.$type, $set->content_attribute_value) ?></li>
+				<?php } ?>
+			</ul>			
+			
+			
+			<hr>

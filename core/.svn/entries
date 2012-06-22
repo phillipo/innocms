@@ -1,0 +1,86 @@
+9
+
+dir
+933
+https://kumbia.svn.sourceforge.net/svnroot/kumbia/branches/1.0/core
+https://kumbia.svn.sourceforge.net/svnroot/kumbia
+
+
+
+2011-05-17T17:05:50.930413Z
+932
+joanhey
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+ad0a42c4-7d27-0410-900f-806a70f5f88f
+
+.htaccess
+file
+
+
+
+
+2011-05-25T14:33:21.421000Z
+43fb2793322c7890b91a4b3e2f21a0ef
+2011-03-02T15:48:52.877576Z
+919
+joanhey
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+15
+
+console
+dir
+
+docs
+dir
+
+extensions
+dir
+
+kumbia
+dir
+
+libs
+dir
+
+tests
+dir
+
+vendors
+dir
+
+views
+dir
+

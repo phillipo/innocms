@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svnroot/kumbia/!svn/ver/933/branches/1.0/default/app/libs
+END
+active_record.php
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svnroot/kumbia/!svn/ver/820/branches/1.0/default/app/libs/active_record.php
+END
+app_controller.php
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svnroot/kumbia/!svn/ver/896/branches/1.0/default/app/libs/app_controller.php
+END
+application_controller.php
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svnroot/kumbia/!svn/ver/907/branches/1.0/default/app/libs/application_controller.php
+END
+bootstrap.php
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svnroot/kumbia/!svn/ver/928/branches/1.0/default/app/libs/bootstrap.php
+END
+view.php
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svnroot/kumbia/!svn/ver/904/branches/1.0/default/app/libs/view.php
+END
+scaffold_controller.php
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svnroot/kumbia/!svn/ver/933/branches/1.0/default/app/libs/scaffold_controller.php
+END

@@ -1,0 +1,78 @@
+(function($) {
+	
+	$.fn.iModal = function(optionsUser) {
+		
+		$this = $(this);
+		
+		var defaults = {
+			title : 'Ventana flotante',
+			id : 'ui-modal-window',
+			width : 500,
+			height : 180,
+			keyboard: false,
+			backdrop: true,
+			resizable: false,			
+			content : '',
+			buttons : { "Ok" : {
+				'name' : 'Ok',
+				'function' : function() { $('#messageDialog').dialog('close'); }
+				}
+				}
+			}
+		};
+		
+		var empty = {};
+		var options = $.extend(empty, defaults, optionsUser);
+		
+		var init = function(opt) {
+			
+			var buttons = '';
+			
+			for (btn in opt.buttons) {
+				buttons += '<a href="#" id="modalButton-" + + "class="btn">' + btn + '</a>';
+			}
+			
+			
+			
+			var modal = 
+					'<div class="modal fade ' + opt.width + '" id="' + opt.id + '">' + 
+			    	'	<div class="modal-header">' +
+			    		'		<button class="close" data-dismiss="modal">×</button>' +
+			    		'		<h3>' + opt.title + '</h3>' +
+			    	'	</div>' +
+				    '	<div class="modal-body">' +
+				    '		<div class="progress progress-striped active"><div class="bar" style="width: 100%;"></div></div>' +
+			    	'	</div>' +
+				    '	<div class="modal-footer">' +
+				    	'	<a href="#" class="btn" data-dismiss="modal">Cerrar</a>' +
+				    	'	<a href="#" class="btn btn-primary">Guardar cambios</a>' +
+				    	buttons +
+				    '	</div>' +
+				'</div>';
+			
+			// Destino de la caja
+			if ($('#' + opt.id).length == 0) $('body').append(modal);
+
+			$('.modal').modal({
+		        backdrop: true,
+		        keyboard: false
+		    }).css({
+		        'margin-left': function () {
+		            return -($(this).width() / 2);
+		        }
+		    });	
+						
+			$('.modal-body').load(opt.content);
+			
+			return;
+
+			
+		};
+		
+		
+		init(options);
+		
+	};
+	
+	
+})(jQuery);

@@ -1,0 +1,150 @@
+<?php
+/*
+Author: Cesar Caballero Gallego
+Date: 05/03/2012 - 19:02:24
+File: edit.phtml
+*/
+?>
+		
+			<div id="main">
+
+				<?php echo Form::open('admin/usergroup/edit/'.$usergroup->usergroup_id,'post') ?>
+				
+				<?php echo Form::hidden('usergroup.id',null,$usergroup->usergroup_id).EOL ?>
+				<?php echo Form::hidden('definition.definition_key',null,$definition->definition_key).EOL ?>
+				<?php echo Form::hidden('usergroup_users',null,'') ?>		
+			
+				<h1>Grupos de usuarios</h1>
+				
+				<!-- BREADCRUMB -->
+				<?php echo View::partial('admin/breadcrumb')?>
+				<!-- fBREADCRUMB -->			
+			
+				<?php View::content() ?>
+		
+				<!-- TABS -->
+				<div class="tabbable tabs-left">
+		
+					<!-- CONTROLS TABS -->
+					<ul class="nav nav-tabs">
+						<li class="active"><a href="#ui-usergroup-general" data-toggle="tab">Datos generales</a></li>
+						<li><a href="#ui-usergroup-users" data-toggle="tab">Usuarios</a></li>
+					</ul>
+					<!-- fCONTROLS TABS -->
+								
+					<!-- CONTENT TABS -->
+					<div class="tab-content">
+						
+						<div id="ui-usergroup-general" class="tab-pane active">
+						
+							<fieldset><legend>Datos generales</legend>
+							
+								<div class="frow">
+									<label for="nombre">Nombre</label>
+									<?php echo Form::text('definition.definition_value','class="col_10"', $usergroup->definition_value) ?>
+								</div>
+							
+							</fieldset>
+							
+							<fieldset><legend>Estado</legend>
+								
+								<div class="frow">
+									<label for="usergroup_usergroup_active" class="checkbox">
+										<?php echo Form::check('usergroup.usergroup_active','1','', ($usergroup->usergroup_active == '1' ? true : false) )?>
+										Activo / Inactivo
+									</label>
+								</div>
+							
+							</fieldset>									
+						
+						</div>	
+						
+						<div id="ui-usergroup-users" class="tab-pane">
+	
+							<fieldset><legend>Usuarios asociados a este grupo</legend>
+								
+								<p>Los usuarios no seleccionados no forman parte de este grupo. Si desea añadir un usuario active su casilla asociada.</p>
+								
+								<button id="ui-browserUserList" class="btn"><i class="icon-pencil">&nbsp;</i> Añadir usuarios</button>
+								<div id="browserUserList" class="well">
+								
+									<ul id="newUsers" class="unstyled">
+									<?php 
+									foreach ($userList as $user) { 
+										
+										$showed = ($user->usergroup_id == $usergroup->usergroup_id ) ? ' class="hidden"' : ''; 
+									?>
+										<li id="<?php echo 'userItem-'.$user->user_id ?>"<?php echo $showed ?>>
+											<div class="btn-group">
+												<a class="ui-addUser btn btn-mini"><i class="icon-user"></i> <?php echo $user->user_name ?></a>
+												<a class="ui-addUser btn btn-mini btn-success" id="<?php echo 'addUserId-'.$user->user_id ?>" title="Añadir elemento de la lista"><i class="icon-plus">&nbsp;</i></a>
+											</div>										
+										</li>
+									<?php
+									}
+									?>
+									</ul>								
+								
+								</div>
+
+								<ul id="userList" class=" unstyled">
+								<?php
+								foreach ($assignedUsers as $user) { 								
+									echo '	<li id="addedUserItem-'.$user->user_id.'">';
+									echo '		<div class="btn-group">';
+									echo '		<a class="ui-infoUser btn btn-mini" id="infoUser-'.$user->user_id.'" href="#">'.$user->user_name.'</a>';
+									echo '		<a class="ui-removeUser btn btn-mini btn-danger" id="removeUser-'.$user->user_id.'" href="#" title="Quitar elemento de la lista"><i class="icon-remove">&nbsp;</i></a>';
+									echo '		</div>';
+									echo '	</li>';
+								} 
+								?>
+								</ul>
+								
+							</fieldset>							
+						
+						</div>
+						
+						<div id="ui-usergroup-perms" class="tab-pane">
+							
+							<?php $perms = array('Páginas','Contenidos','Categorías','Menus','Modulos','Estadísticas'); ?>
+							<?php /*foreach ($perms as $perm) { ?>
+							<fieldset><legend><?php echo $perm ?></legend>
+								<?php for ($i = 0; $i < 3; $i++) { ?>
+								<div class="span3">
+									<ul class="unstyled">
+										<?php for ($j = 0; $j < 10; $j++) { ?>
+										<li><label class="checkbox">Opcion a dar permiso<input type="checkbox" /></label></li>
+										<?php } ?>
+									</ul>
+									</ul>
+								</div>
+								<?php } ?>
+							</fieldset>				
+							<?php } */?>
+						</div>
+						
+						
+					</div>		
+					<!-- fCONTENT TABS -->
+				
+				</div>
+				
+				<!-- ACTIONS -->
+				<div class="form-actions well">
+
+					<div class="span6">
+						<button class="btn btn-danger">Descartar</button>
+					</div>
+					<div class="span6">
+						<div class="pull-right">
+							<input type="submit" value="Guardar datos" class="btn btn-primary" />						
+						</div>
+					</div>
+					
+				</div>
+				<!-- fACTIONS -->	
+				
+			<?php echo Form::close() ?>
+	
+			</div>			
+					

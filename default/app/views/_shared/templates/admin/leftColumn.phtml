@@ -1,0 +1,41 @@
+<?php echo View::partial('admin/html_header',0,array('prefs'=>$prefs)).EOL ?>
+<body id="adminLayout">
+	
+	<div class="container">	
+		
+		<!-- NAVBAR -->
+		<div class="navbar">
+			<?php echo View::partial('admin/navbar',0, array('prefs'=>$prefs, 'searchTerm'=>$searchTerm)).EOL ?>
+		</div>	
+		<div class="clearfix"><!-- BR --></div>	
+		<!-- fNAVBAR -->	
+
+		<!-- CONTENT -->	
+		<div class="row-fluid">
+
+			<div class="span12">
+		
+				<!-- LATERAL MENU -->	
+				<div id="menubar" class="span3">
+					<?php echo View::partial('admin/'.Router::get('controller').'/statusList', 0, $lateralData).EOL; ?>
+				</div>
+				<!-- fLATERAL MENU -->
+			
+				<!-- VIEW -->
+				<div id="content" class="span9">
+					
+				<?php echo View::content(); ?>
+				
+				</div>
+				<!-- fVIEW -->
+			
+			</div>
+				
+		</div>		
+	
+		<!-- fCONTENT -->
+	
+	</div>
+		
+</body>
+</html>

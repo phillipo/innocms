@@ -1,0 +1,88 @@
+<?php
+/*
+Author: Cesar Caballero Gallego
+Date: 10/05/2012 - 14:04:19
+File: index.phtml
+*/
+
+?>
+
+
+			<div class="pages">
+
+				<h1>Redes sociales</h1>
+				
+				<!-- BREADCRUMB -->
+				<?php echo View::partial('admin/breadcrumb')?>
+				<!-- fBREADCRUMB -->					
+				
+				<?php echo Form::openMultipart('admin/socialnetwork/index/').EOL ?>
+				
+				<!-- TABS -->
+				<div class="tabbable tabs-left">
+			
+					<!-- CONTROL TABS -->
+					<ul class="nav nav-tabs">
+						<?php foreach ($socialType as $sKey) { 
+							$active  = ($sKey == 'social') ? ' class="active"' : '';
+							?>					
+						<li<?php echo $active?>><a href="<?php echo '#ui-prefs-'.$sKey ?>" data-toggle="tab"><?php echo ucfirst($sKey) ?></a></li>
+						<?php } ?>
+					</ul>
+					<!-- fCONTROL TABS -->
+				
+					<!-- CONTENT TABS -->
+					<div class="tab-content">		
+						
+						<?php 
+						foreach ($socialType as $sKey) { 
+							$active  = ($sKey == 'social') ? 'active' : '';
+							?>
+						
+						<!-- <?php echo ucfirst($sKey) ?> -->
+						<div id="<?php echo 'ui-prefs-'.$sKey ?>" class="tab-pane <?php echo $active ?>">
+						
+							<fieldset><legend>Redes <?php echo ucfirst($sKey) ?></legend>
+							
+							<?php
+							if (isset($socialList[$sKey])) {
+								foreach ($socialList[$sKey] as $social) { ?>
+							<div class="frow">
+							<label for="snet_<?php echo $social->snet_slug ?>"><?php echo $social->snet_name ?></label>
+							<?php echo Form::text('snet_'.$social->snet_slug,'class="span5" placeholder="'.$social->snet_url.'"','') ?>
+							</div>
+
+							<?php }
+							 }	?>
+							</fieldset>				
+				
+						</div>
+						<!-- <?php echo 'f'.ucfirst($sKey) ?> -->
+						<?php } ?>
+							
+						
+					</div>
+					<!-- fCONTENT TABS -->
+					
+				</div>
+				<!-- fTABS -->
+				
+				<!-- ACTIONS -->
+				<div class="form-actions well">
+
+					<div class="span6">
+						<button class="btn btn-danger">Descartar</button>
+					</div>
+					<div class="span6">
+						<div class="btn-group pull-right">
+							<input type="submit" value="Guardar datos" class="btn btn-primary" />
+							<input type="button" value="Vista previa" class="btn" />							
+						</div>
+					</div>
+					
+				</div>
+				<!-- fACTIONS -->				
+				
+				<?php echo Form::close() ?>
+
+			</div>

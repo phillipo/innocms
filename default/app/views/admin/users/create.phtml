@@ -1,0 +1,123 @@
+<?php
+/*
+Creado por: Phillipo
+Fecha: 01/03/2012 16:59:36
+Fichero: create.phtml
+*/
+?>
+						
+			<div id="main">
+			
+				<h1>Crear usuario</h1>
+				
+				<!-- BREADCRUMB -->
+				<?php echo View::partial('admin/breadcrumb')?>
+				<!-- fBREADCRUMB -->			
+			
+				<?php View::content() ?>
+				
+				<?php echo Form::open('admin/users/create','post').EOL ?>
+				
+				<!--  PESTAÑAS -->
+				<div class="tabbable tabs-left"> 
+			
+					<!-- CONTROL PESTAÑAS -->
+					<ul class="nav nav-tabs">
+						<li class="active"><a href="#ui-user-general" data-toggle="tab">Datos generales</a></li>
+						<li><a href="#ui-user-access" data-toggle="tab">Datos de acceso</a></li>
+					</ul>
+					<!-- fCONTROL PESTAÑAS -->
+					
+					<!-- PESTAÑAS -->
+					<div class="tab-content">
+										
+						<div id="ui-user-general" class="tab-pane active">	
+							
+							<fieldset><legend>Datos generales</legend>
+									
+								<div class="frow">
+								<label for="user_user_name">Nombre real</label>
+								<?php echo Form::text('user.user_name','class="span5"') ?>
+								</div>
+					
+								<div class="frow">
+								<label for="user_user_name">Alias</label>
+								<?php echo Form::text('user.user_alias','class="span5"') ?>
+								</div>			
+								
+								<div class="frow">
+								<label for="user_user_email">Correo electrónico</label>
+								<?php echo Form::text('user.user_email','class="span5"') ?>
+								</div>		
+							
+							</fieldset>
+					
+							<fieldset><legend>Avatar</legend>
+							
+							
+							</fieldset>
+							
+						</div>
+						
+						<div class="clearfix"><!-- BR --></div>
+						
+						<div id="ui-user-access" class="tab-pane">
+							
+							<fieldset><legend>Datos de acceso</legend>
+										
+								<div class="frow">
+								<label for="user_user_login">Usuario (login)</label>
+								<?php echo Form::text('user.user_login','class="span5"') ?>
+								</div>
+								
+								<div class="frow">
+								<label for="user_user_password">Contraseña</label>
+								<?php echo Form::pass('user.user_password','class="span5"') ?>
+								</div>	
+								
+								<div class="frow">
+								<label for="user_user_password">Confirmar Contraseña</label>
+								<?php echo Form::pass('user.user_password','class="span5"') ?>
+								</div>		
+								
+							</fieldset>	
+								
+							<fieldset><legend>Estado</legend>			
+								
+								<div class="frow">
+									<label for="user_user_active" class="checkbox">
+										<?php echo Form::check('user.user_active',1,'class="checkbox"',false )?>
+										Activo / Inactivo
+									</label>														
+								</div>
+								
+						
+							</fieldset>
+					
+							<fieldset><legend>Grupo de acceso</legend>
+							
+								<div class="frow">
+								<label for="user_usergroup_id">Grupo</label>
+								<?php echo Form::text('user.usergroup_id','class="inputField"','1') ?>
+								</div>			
+								
+							</fieldset>
+						
+						</div>
+						
+					</div>
+				
+				</div>	
+				<!--  fPESTAÑAS -->
+				
+				<div class="form-actions">
+					<div class="btn-group">
+						<input type="submit" value="Guardar datos" class="btn btn-primary"/>
+					</div>
+				</div>
+				
+				<?php Form::close() ?>
+								
+			</div>
+				
+			

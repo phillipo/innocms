@@ -1,0 +1,13 @@
+@charset "UTF-8";
+
+#home.base #header {
+	background-color: #f00;	
+	width: 100%;
+	height: 100px;
+}
+
+#home.base #footer {
+	background-color: #f00;
+	width: 100%;
+	height: 100px;
+}

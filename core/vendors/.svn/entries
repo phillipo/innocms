@@ -1,0 +1,40 @@
+9
+
+dir
+933
+https://kumbia.svn.sourceforge.net/svnroot/kumbia/branches/1.0/core/vendors
+https://kumbia.svn.sourceforge.net/svnroot/kumbia
+
+
+
+2009-07-09T19:33:38.883786Z
+430
+joanhey
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+ad0a42c4-7d27-0410-900f-806a70f5f88f
+
+excel
+dir
+
+fpdf
+dir
+
+libchart
+dir
+
+phpmailer
+dir
+

@@ -1,0 +1,86 @@
+
+	
+	
+		<div class="navbar-inner navbar-fixed-top">
+			
+				<a href="/admin/dashboard" class="brand">innoCMS 5.x</a>
+				
+				<!-- NAVBAR -->
+				<div class="nav-collapse">
+				
+					<ul class="nav">
+					
+						<li><?php echo Html::link('admin/page/design', 'Diseño') ?></li>
+					
+						<li><?php echo Html::link('admin/page/structure','Estructura') ?></li>
+						
+						<li class="dropdown">
+							<?php echo Html::link('admin/page','Datos<strong class="caret"></strong>','class="dropdown-toggle" data-target="#" data-toggle="dropdown"') ?>
+							
+							<ul class="dropdown-menu">
+								<li class="nav-header">Registros</li>
+								<li><?php echo Html::link('admin/content','Contenidos','title="Entradas de blog, productos, eventos"') ?></li>
+								<li><?php echo Html::link('admin/category','Categorías') ?></li>
+								<li class="divider"></li>
+								<li class="nav-header">Ficheros</li>
+								<li><?php echo Html::link('admin/filebrowser','Ficheros','title="Documentos, imágenes, archivos comprimidos"') ?></li>
+								<li><?php echo Html::link('admin/set','Sets / Colecciones','title="Colecciones de ficheros para una mejor organización"') ?></li>						
+							</ul>	
+							
+						</li>		
+						
+						<li class="dropdown">
+							<?php echo Html::link('admin/users','Acceso<strong class="caret"></strong>','class="dropdown-toggle" data-target="#" data-toggle="dropdown"') ?>
+							
+							<ul class="dropdown-menu">
+								<li><?php echo Html::link('admin/users','Usuarios') ?></li>
+								<li><?php echo Html::link('admin/usergroup','Grupos') ?></li>			
+							</ul>	
+							
+						</li>
+						
+						<li class="dropdown">
+							<?php echo Html::link('admin/preferences','Ajustes<strong class="caret"></strong>','class="dropdown-toggle" data-target="#" data-toggle="dropdown"') ?>
+							
+							<ul class="dropdown-menu">
+								<li class="nav-header">Preferencias</li>
+								<li><?php echo Html::link('admin/preferences','Generales') ?></li>				
+								<li><?php echo Html::link('admin/socialnetwork','Redes sociales') ?></li>
+								<li><?php echo Html::link('admin/language','Idiomas') ?></li>
+								<li class="divider"></li>
+								<li><?php echo Html::link('admin/sitemap','Mapa del sitio') ?></li>
+								<li class="divider"></li>
+								<li class="nav-header">Apariencia</li>
+								<li><?php echo Html::link('admin/template','Temas') ?></li>				
+								<li><?php echo Html::link('admin/module','Widgets') ?></li>								
+							</ul>
+						</li>
+						
+					</ul>
+					
+					<?php echo Form::open(null,'post','class="navbar-search pull-left"').EOL ?>
+					<?php echo Form::text('searchTerm','class="search-query span2" placeholder="Search"', $searchTerm).EOL ?>
+					<?php //echo Form::submit('Buscar', 'class="ui-search btn"').EOL ?>
+					<?php echo Form::close().EOL ?>
+				
+				</div>
+				<!-- fNAVBAR -->
+				<ul class="nav pull-right">
+					<li class="dropdown">
+						<?php echo Html::link('admin/preferences','{Nombre Usuario}<strong class="caret"></strong>','class="dropdown-toggle" data-target="#" data-toggle="dropdown"') ?>
+						<ul class="dropdown-menu">
+							<li><?php echo Html::link('admin/profile','Perfil') ?></li>
+							<li><?php echo Html::link('admin/profile','Visitar sitio') ?></li>
+							<li><?php echo Html::link('admin/report','Estadísticas') ?></li>
+							<li class="divider"></li>
+							<li><?php echo Html::link('admin/profile','Mejorar cuenta') ?></li>
+							<li class="divider"></li>
+							<li><?php echo Html::link('admin/support','Soporte') ?></li>
+							<li class="divider"></li>
+							<li><?php echo Html::link('admin/logout','Cerrar sesión') ?></li>								
+						</ul>						
+					</li>
+				</ul>
+				
+			
+		</div>

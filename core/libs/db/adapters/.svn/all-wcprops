@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svnroot/kumbia/!svn/ver/920/branches/1.0/core/libs/db/adapters
+END
+mysqli.php
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svnroot/kumbia/!svn/ver/558/branches/1.0/core/libs/db/adapters/mysqli.php
+END
+pgsql.php
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svnroot/kumbia/!svn/ver/564/branches/1.0/core/libs/db/adapters/pgsql.php
+END
+informix.php
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svnroot/kumbia/!svn/ver/558/branches/1.0/core/libs/db/adapters/informix.php
+END
+pdo.php
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svnroot/kumbia/!svn/ver/920/branches/1.0/core/libs/db/adapters/pdo.php
+END
+sqlite.php
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svnroot/kumbia/!svn/ver/903/branches/1.0/core/libs/db/adapters/sqlite.php
+END
+oracle.php
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svnroot/kumbia/!svn/ver/558/branches/1.0/core/libs/db/adapters/oracle.php
+END
+firebird.php
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svnroot/kumbia/!svn/ver/558/branches/1.0/core/libs/db/adapters/firebird.php
+END
+mysql.php
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svnroot/kumbia/!svn/ver/562/branches/1.0/core/libs/db/adapters/mysql.php
+END

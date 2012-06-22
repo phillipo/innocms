@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svnroot/kumbia/!svn/ver/909/branches/1.0/core/libs/auth
+END
+auth.php
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svnroot/kumbia/!svn/ver/831/branches/1.0/core/libs/auth/auth.php
+END
+auth_interface.php
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svnroot/kumbia/!svn/ver/831/branches/1.0/core/libs/auth/auth_interface.php
+END

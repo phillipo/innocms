@@ -1,0 +1,61 @@
+<?php
+/*
+Autor: Phillipo
+Fecha: 25/05/2011 17:59:20
+Fichero: menubar.phtml
+*/
+
+?>
+
+<div id="menubar">
+
+	<ul>
+	<li class="block">
+		<h2>Escritorio</h2>
+		<ul>
+			<li><?php echo Html::link('admin/index','Escritorio') ?></li>
+			<li><?php echo Html::link('admin/perfil','Tu Perfil') ?></li>
+		</ul>
+	</li>
+	</ul>
+	<ul>	
+	<li class="block">
+		<h2>Contenidos</h2>
+		<ul>
+		<li><?php echo Html::link('admin/content/post','Contenidos') ?></li>
+		<li><?php echo Html::link('admin/content/create/post','Añadir nuevo') ?></li>
+		<li><?php echo Html::link('admin/category','Categorías') ?></li>
+		</ul>
+	</li>	
+	<li class="block">
+		<h2>Páginas</h2>
+		<ul>
+			<li><?php echo Html::link('admin/content/page','Páginas') ?></li>
+			<li><?php echo Html::link('admin/content/create/page','Añadir nueva') ?></li>
+		</ul>
+	</li>
+	<li class="block">
+		<h2>Apariencia</h2>	
+		<ul>
+			<li><?php echo Html::link('admin/template','Temas') ?></li>
+			<li><?php echo Html::link('admin/menu','Menús') ?></li>			
+			<li><?php echo Html::link('admin/module','Módulos') ?></li>
+		</ul>
+	</li>		
+	<li class="block">
+		<h2>Usuarios</h2>	
+		<ul>
+			<li><?php echo Html::link('admin/users','Usuarios') ?></li>
+			<li><?php echo Html::link('admin/users/create','Añadir nuevo') ?></li>
+		</ul>
+	</li>
+	<li class="block">
+		<h2>Ajustes</h2>
+		<ul>
+			<li><?php echo Html::link('admin/preferences','Generales') ?></li>
+			<li><?php echo Html::link('admin/preferences','Multimedia') ?></li>
+			<li><?php echo Html::link('admin/preferences','Idiomas') ?></li>
+		</ul>
+	</li>
+	</ul>
+</div>

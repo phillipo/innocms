@@ -1,0 +1,188 @@
+<?php
+/*
+Creado por: Phillipo
+Fecha: 25/05/2011 16:59:36
+Fichero: admin_controller.php
+*/
+?>
+
+<?php echo Form::open('admin/content/edit/page/'.$content->id,'post').chr(10) ?>
+
+<?php echo Form::hidden('content.id',null,$content->id).chr(10) ?>
+<?php echo Form::hidden('content.content_type',null,'page').chr(10) ?>
+<?php echo Form::hidden('content_definition.id',null, $definition->id).chr(10) ?>
+<?php echo Form::hidden('content_definition.language_id',null,'1').chr(10) ?>
+<?php echo Form::hidden('content_definition.content_id',null, $content->id).chr(10) ?>
+
+<div id="content">
+	
+	<div id="main">
+
+		<?php // View::content() ?>	
+		<h1>Editar página</h1>	
+	
+		<div id="contentTabs">
+
+			<ul>
+				<li><a href="#ui-content-content">Contenido</a></li>
+				<li><a href="#ui-content-template">Plantilla</a></li>
+				<li><a href="#ui-content-seo">SEO</a></li>
+				<li><a href="#ui-content-settings">Propiedades</a></li>
+				<li><a href="#ui-content-history">Historial</a></li>
+			</ul>			
+			
+			<div id="ui-content-content">	
+				
+				<div class="frow">
+				<label for="content_definition_definition_title">Título</label>
+				<?php echo Form::text('content_definition.definition_title','class="inputField ui-slug"',$definition->definition_title).chr(10) ?>
+				</div>
+				
+				<div class="frow">
+				Enlace permanente: http://www.direccióndelblog.com/<span class="ui-slug-result"><?php echo $definition->definition_slug ?></span>
+				<?php echo Form::hidden('content_definition.definition_slug','class="ui-slug-result"',$definition->definition_slug).chr(10) ?>
+				</div>
+				
+				<fieldset>
+					<legend>Redirección</legend>
+					<div class="frow">
+					<label for="content_property_definition_status0">Interna</label>
+					<?php echo Form::radio('content_definition.definition_status', 'public', null, ($properties->redirect == 'public' ? true : false)).chr(10) ?>
+					</div>
+					<div class="frow">
+					<label for="content_property_definition_status1">Externa</label>
+					<?php echo Form::radio('content_definition.definition_status', 'private', null, ($properties->redirect == 'private' ? true : false)).chr(10) ?>
+					</div>
+					<div class="frow">
+					<label for="content_property_definition_status1">No</label>
+					<?php echo Form::radio('content_definition.definition_status', 'private', null, ($properties->redirect == 'private' ? true : false)).chr(10) ?>
+					</div>					
+				</fieldset>	
+								
+				<div class="frow">
+				<label for="content_definition_definition_content">Contenido</label>
+				<?php echo Form::textarea('content_definition.definition_content','class="mainContent ui-tinyContent inputField"',$definition->definition_content).chr(10) ?>
+				</div>
+				
+				<div class="frow">
+				<label for="content_definition_definition_summary">Extracto</label>
+				<?php echo Form::textarea('content_definition.definition_summary','class="mainSummary inputField"',$definition->definition_summary).chr(10) ?>
+				</div>
+				
+			</div>	
+			
+			<div id="ui-content-template">
+			
+				<?php echo Html::link('#','Seleccionar plantilla','class="button pill"') ?>
+			
+				<h2>Contenido a la derecha</h2>
+				<div id="ui-preview-template-1" class="ui-preview-template">
+					<div class="col_8">
+						<div class="col_9 empty" style="height: 50px"><p><a href="#" class="button icon add">Cabecera</a></p></div>
+						<div class="clear"></div>					
+						<div class="col_3 empty" style="height: 300px"><p><a href="#" class="button icon add">Col. Derecha</a></p></div>
+						<div class="col_6 empty" style="height: 300px"><p><a href="#" class="button icon add">Contenidos</a></p></div>					
+					</div>				
+					<div class="clear"><!-- BR --></div>	
+				</div>
+
+				<h2>Contenido a la izquierda</h2>
+				<div id="ui-preview-template-2" class="ui-preview-template">
+					<div class="col_8">
+						<div class="col_9 empty" style="height: 50px"><p><a href="#" class="button icon add">Cabecera</a></p></div>
+						<div class="clear"></div>					
+						<div class="col_6 empty" style="height: 300px"><p><a href="#" class="button icon add">Contenidos</a></p></div>						
+						<div class="col_3 empty" style="height: 300px"><p><a href="#" class="button icon add">Col. Derecha</a></p></div>					
+					</div>				
+					<div class="clear"><!-- BR --></div>	
+				</div>
+				
+				<h2>Home</h2>
+				<div id="ui-preview-template-3" class="ui-preview-template">
+					<div class="col_8">
+						<div class="col_9 empty" style="height: 200px"><p><a href="#" class="button icon add">Cabecera</a></p></div>
+						<div class="clear"></div>					
+						<div class="col_3 empty" style="height: 75px"><p><a href="#" class="button icon add">Columna</a></p></div>						
+						<div class="col_3 empty" style="height: 75px"><p><a href="#" class="button icon add">Columna</a></p></div>	
+						<div class="col_3 empty" style="height: 75px"><p><a href="#" class="button icon add">Columna</a></p></div>
+					</div>				
+					<div class="clear"><!-- BR --></div>	
+				</div>				
+				
+				
+			
+			</div>
+						
+	
+			<div id="ui-content-seo">	
+			
+				<h2>SEO</h2>
+				<p>Los campos SEO se usan para mejorar la indexación de las páginas web.</p>
+				
+				<div class="frow">
+				<label for="content_definition_definition_seotitle">Titulo SEO</label>
+				<?php echo Form::text('content_definition.definition_seotitle','class="mainTitle inputField"', $definition->definition_seotitle).chr(10) ?>
+				</div>
+				
+				<div class="frow">
+				<label for="content_definition_definition_seodesc">Descripción SEO</label>
+				<?php echo Form::textarea('content_definition.definition_seodesc','class="mainSummary inputField"', $definition->definition_seodesc).chr(10) ?>
+				</div>
+				
+				<div class="frow">
+				<label for="content_definition_definition_seotags">Etiquetas SEO</label>
+				<?php echo Form::text('content_definition.definition_seotags','class="mainTitle inputField"', $definition->definition_seotags).chr(10) ?>
+				</div>
+				
+			</div>
+
+			<div id="ui-content-settings">	
+								
+				<h2>Propiedades</h2>
+				
+				<fieldset>
+					<legend>Visibilidad</legend>
+					<label for="content_definition_definition_status0">Visible:</label>
+					<?php echo Form::radio('content_definition.definition_status', 'public', null, ($definition->definition_status == 'public' ? true : false)).chr(10) ?>
+					<label for="content_definition_definition_status1">Oculto:</label>
+					<?php echo Form::radio('content_definition.definition_status', 'private', null, ($definition->definition_status == 'private' ? true : false)).chr(10) ?>
+				</fieldset>	
+							
+				<fieldset>
+					<legend>Página superior</legend>
+					<?php 
+					View::helpers('contentSelect');
+			    	//$desplegable = new contentSelect(0,$content->content_parent_id,'&nbsp;&nbsp;');
+			    	//echo $desplegable->show('content_parent_id','content[content_parent_id]');
+					?>
+				</fieldset>
+				
+				<p>&nbsp;</p>
+				
+				<fieldset>
+					<legend>Orden</legend>
+					<?php echo Form::text('content.content_sort_order', null, $content->content_sort_order) ?>
+				</fieldset>				
+									
+			</div>									
+			
+			<div id="ui-content-history">
+				
+				<h2>Historial de modificaciones</h2>
+				<p><strong>Creado:</strong> <?php echo Innocms::humanDate($definition->definition_created_at,'d/m/Y H:i:s'); ?></p>
+				<p><strong>Modificado:</strong> <?php echo Innocms::humanDate($definition->definition_modified_in,'d/m/Y H:i:s') ?></p>
+			
+			</div>
+	
+		</div>
+
+		<div class="block">
+			<input type="submit" value="Submit" />
+			<input type="button" value="Ver" />
+		</div>		
+		
+	</div>
+
+</div>
+
+<?php echo Form::close() ?>

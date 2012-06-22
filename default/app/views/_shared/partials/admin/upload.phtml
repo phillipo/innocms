@@ -1,0 +1,40 @@
+<?php
+/*
+Author: Cesar Caballero Gallego
+Date: 18/05/2012 - 16:34:18
+File: upload.phtml
+*/
+?>
+
+			<div class="well upload-form" id="container">
+					
+				<h3>Subir archivos...</h3>
+				
+				<div class="row-fluid">
+					<div class="span6">
+						<!-- Boton para abrir navegador -->
+		                <button id="pickfiles" class="btn"><i class="icon-plus"></i> <span>Añadir archivos</span></button>	
+		                <!-- fOpen Browser -->	
+		                
+		                <!-- Boton para iniciar upload -->
+		                <button id="uploadfiles" class="btn btn-inverse"><i class="icon-upload icon-white"></i> <span>Iniciar subida</span></button>  
+		                <!-- fINIT UPLOADS -->
+					</div>
+					<div class="span6">
+		                <!-- Boton para iniciar upload -->
+		                <button id="cleanfiles" class="btn btn-success pull-right"><i class="icon-refresh icon-white"></i> <span>Actualizar listado</span></button>  
+		                <!-- fINIT UPLOADS -->					
+					</div>		                
+                </div>  				
+	                				
+				<!-- Contenedor de archivos para subir -->
+				<div id="filelist"></div>		      
+				<!-- fContenedor archivos para subir -->
+				
+				<!-- Progressbar -->
+				<div id="progressbar" class="progress progress-striped active">
+				    <div class="bar" style="width: 0%;"></div>
+				</div> 
+				<!-- fProgressbar -->				          
+			
+			</div>

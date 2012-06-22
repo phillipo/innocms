@@ -1,0 +1,66 @@
+<?php
+/*
+Proyecto: InnoCMS 5.x
+Creado por: Phillipo
+Fecha: 30/07/2011 19:11:52
+Fichero: create.php
+*/
+
+?>
+
+<div id="content">
+
+	<div id="main">
+	
+		<?php View::content() ?>
+
+		<h1>Añadir nuevo menú</h1>
+		
+		<div class="block" style="width: 30em">
+		
+			<div class="frow">
+				<label for="menu.menu_title">Nombre</label>
+				<?php echo Form::input('menu.menu_title') ?>			
+			</div>
+			
+			<div class="frow">
+				<label for="menu.menu_type">Ubicación de menú</label>
+				<select id="menu.menu_type" name="menu[menu_type]">
+					<option value="superior">Menu superior ( general )</option>
+					<option value="inferior">Menu inferior ( pie de página )</option>
+					<option value="lateral">Menú lateral</option>
+				</select>			
+			</div>
+
+			<div class="frow">
+				<label for="menu.menu_showchilds">Mostrar descendientes</label>
+				<?php echo Form::radio('menu.menu_showchilds','1') ?>Sí
+				<?php echo Form::radio('menu.menu_showchilds','0') ?>No
+			</div>
+
+			<div class="frow">
+				<label for="menu.menu_levels">Asociar automáticamente descencientes</label>
+				<?php echo Form::radio('menu.menu_levels','1') ?>Sí
+				<?php echo Form::radio('menu.menu_levels','0') ?>No
+			</div>
+			
+			<div class="frow">
+				<label for="menu.menu_levels">Número de niveles mostrados</label>
+				<?php echo Form::input('menu.menu_levels')?> (0 todos)
+			</div>
+			
+		</div>
+	
+		<div id="ui-treeMenuEditor" class="block" style="width: 30em">
+			<?php
+			View::helpers('draggableTree');
+	    	$tree = new draggableTree(0,0,'');
+	    	echo $tree->show('content_parent_id','content[content_parent_id]');	
+			?>		
+		</div>
+
+	</div>
+	
+
+
+</div>

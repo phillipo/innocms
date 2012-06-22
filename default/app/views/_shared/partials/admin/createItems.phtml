@@ -1,0 +1,50 @@
+<?php
+/*
+Author: Cesar Caballero Gallego
+Date: 07/02/2012 - 20:34:48
+File: createItems.phtml
+*/
+?>
+
+<?php if (in_array(Router::get('controller'), array('page','content','category','set'))) { ?>
+
+			<div class="btn-group">
+				<a class="btn btn-primary" href="#">
+					<i class="icon-plus icon-white"></i>&nbsp;&nbsp;&nbsp;&nbsp;Crear ...</a> 
+					<a class="btn btn-primary dropdown-toggle" data-toggle="dropdown" href="#">
+					<span class="caret"></span>
+				</a>
+				<ul class="dropdown-menu">
+					<li><a href="/admin/content/create/<?php echo $category ?>"><i class="icon-th"></i> Genérico</a></li>
+					<li><a href="/admin/content/create/<?php echo $category ?>"><i class="icon-th"></i> Producto</a></li>
+					<li><a href="/admin/content/create/<?php echo $category ?>"><i class="icon-th"></i> Entrada blog</a></li>
+					<li class="divider"></li>
+					<li><a href="/admin/category/create/<?php echo $category ?>"><i class="icon-th-list"></i> Categoria</a></li>
+					<li><a href="/admin/set/create"><i class="icon-th-list"></i> Set</a></li>
+					<li class="divider"></li>					
+					<li><a href="/admin/page/create"><i class="icon-list-alt"></i> Página</a></li>
+				</ul>
+			</div>
+		
+<?php } else if (in_array(Router::get('controller'),array('users','usergroup','userrole'))) { ?>			
+
+			<div class="btn-group">
+				<a class="btn btn-primary" href="#">
+					<i class="icon-plus icon-white"></i>&nbsp;&nbsp;&nbsp;&nbsp;Crear ...</a> 
+					<a class="btn btn-primary dropdown-toggle" data-toggle="dropdown" href="#">
+					<span class="caret"></span>
+				</a>
+				<ul class="dropdown-menu">
+					<li><a href="/admin/users/create"><i class="icon-th"></i> Usuario</a></li>
+					<li><a href="/admin/usergroup/create"><i class="icon-th"></i> Grupo</a></li>
+					<li><a href="/admin/userrol/create"><i class="icon-th"></i> Rol</a></li>
+				</ul>
+			</div>
+					
+<?php } else if (Router::get('controller') == 'filebrowser') { ?>	
+
+				<a class="btn btn-primary" href="#"><i class="icon-plus icon-white"></i>&nbsp;&nbsp;&nbsp;&nbsp;Subir archivo/s</a> 
+
+
+<?php } ?>
+			

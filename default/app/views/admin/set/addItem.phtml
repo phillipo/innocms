@@ -1,0 +1,19 @@
+<?php
+/*
+Author: Cesar Caballero Gallego
+Date: 25/05/2012 - 13:42:18
+File: itemFile.phtml
+*/
+?>
+
+				
+	    			<div class="thumbnail">
+    					<?php echo ($itemSet['type'] == 'image' ? '<img src="'.$itemSet['preview'].'">' : Html::img($itemSet['preview'])) ?>
+    						<div class="caption">
+    						<h5><?php echo Innocms::trimText($itemSet['basename'],15) ?></h5>
+		    				<div class="btn-group">
+    						<a class="ui-removeFileSet btn btn-mini btn-danger" id="<?php echo 'removefileset-'.$itemSet['id'] ?>" href="#" title="Quitar elemento de la lista">Quitar</a>
+    						<a class="btn btn-mini btn-primary" href="<?php echo '/admin/filebrowser/edit/'.$itemSet['id'] ?>" title="Editar elemento de la lista">Editar</a>    						
+    						</div>
+    					</div>
+		    		</div>

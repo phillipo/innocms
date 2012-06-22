@@ -1,0 +1,43 @@
+<?php
+/*
+Author: Cesar Caballero Gallego
+Date: 05/03/2012 - 17:41:40
+File: index.phtml
+*/
+
+?>
+			<div id="main" class="users">
+			
+				<h1>Grupos de usuarios</h1>
+				
+				<!-- BREADCRUMB -->
+				<?php echo View::partial('admin/breadcrumb')?>
+				<!-- fBREADCRUMB -->			
+		
+				<?php View::content() ?>
+								
+				<div class="clear"><!-- BR --></div>
+				
+				<?php echo Form::open('','post','id="ui-form"'); ?>
+				
+				<table class="table table-bordered table-striped">
+				<thead>
+					<tr>
+						<th>Grupo</th>
+						<th class="c_date">Nº Usuarios</th>
+					</tr>
+				</thead>
+				<tbody>
+				<?php foreach ($listadoGrupos as $grupo) { ?>		
+					<tr>
+					<td><?php echo Html::linkAction('edit/'.$grupo->usergroup_id, $grupo->definition_value) ?></td>	
+					<td><?php echo $grupo->total ?></td>
+					</tr>
+				<?php } ?>
+				
+				</tbody>
+				</table>
+				
+				<?php echo Form::close() ?>
+		
+			</div>

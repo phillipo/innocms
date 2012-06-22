@@ -1,0 +1,18 @@
+<?php
+/*
+Author: Cesar Caballero Gallego
+Date: 07/02/2012 - 20:26:30
+File: statusList.phtml
+*/
+?>
+
+			<h2>Mostrar:</h2>
+			<ul>
+				<li><?php echo Html::linkAction('index','Todas') ?></li>
+				<li><?php echo Html::linkAction('index/public','Publicadas') ?></li>
+				<li><?php echo Html::linkAction('index/private','Privadas') ?></li>	
+				<li><?php echo Html::linkAction('index/password','Protegidas') ?></li>
+				<li><?php echo Html::linkAction('index/draft','Borradores') ?></li>
+				<li><?php echo Html::linkAction('index/expires','Caducadan') ?></li>
+				<li><?php echo Html::linkAction('index/redirect','Redirigidas') ?></li>
+			</ul>

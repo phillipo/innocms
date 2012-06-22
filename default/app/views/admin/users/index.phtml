@@ -1,0 +1,72 @@
+<?php
+/*
+Creado por: Phillipo
+Fecha: 25/05/2011 16:59:36
+Fichero: admin_controller.php
+*/
+?>
+
+
+			<div id="main" class="users">
+		
+				<h1>Usuarios</h1>
+				
+				<!-- BREADCRUMB -->
+				<?php echo View::partial('admin/breadcrumb')?>
+				<!-- fBREADCRUMB -->									
+		
+				<?php View::content() ?>
+				
+				<!-- Opciones listado -->
+				<?php echo View::partial('admin/optionsLists',0,array('searchTerm'=>$searchTerm)) ?>
+				<!-- fOpciones listado -->
+								
+				<div class="clear"><!-- BR --></div>
+				
+				<!-- RESULTS -->
+				<div id="pageList">
+				
+					<?php if (sizeof($listadoUsuarios) > 0) { ?>
+					
+					<?php echo Form::open('','post','id="ui-form"'); ?>
+					
+					<!-- TABLE RESULTS -->
+					<table class="table table-bordered table-striped">
+						<thead>
+							<tr>
+								<th class="c_checker"><?php echo Form::check('ui-checkAll','1','class="ui-checkAll" title="Seleccionar/deseleccionar todos"',false)?></th>
+								<th>Usuario</th>
+								<th class="c_date">Último acceso</th>
+								<th class="c_id">ID</th>
+							</tr>
+						</thead>
+						<tbody>
+						<?php foreach ($pages[$pageId] as $usuario) { ?>		
+							<tr>
+							<td><input type="checkbox" id="<?php echo 'listID-'.$usuario->user_id ?>" name="listID[]" value="<?php echo $usuario->user_id ?>" title="Seleccionar / deseleccionar"></td>
+							<td><?php echo Html::linkAction('edit/'.$usuario->user_id, $usuario->user_name) ?></td>
+							<td><?php echo Innocms::humanDate($usuario->user_created_at,'d/m/Y H:i:s') ?></td>	
+							<td><?php echo $usuario->user_id ?></td>
+							</tr>
+						<?php } ?>
+						
+						</tbody>
+					</table>
+					<!-- TABLE RESULTS -->
+					
+					<!-- PAGINACION -->
+					<?php View::partial('admin/pagination', false, $paginationData); ?>
+					<!-- fPAGINACION -->
+					
+					<?php echo Form::close() ?>
+					
+					<?php } else { ?>
+					
+						<p>No hay usuarios según criterios o búsqueda.</p>
+					
+					<?php } ?>
+					
+				</div>
+				<!-- RESULTS -->
+		
+			</div>

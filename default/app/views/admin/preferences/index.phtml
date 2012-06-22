@@ -1,0 +1,166 @@
+<?php
+/*
+Creado por: Phillipo
+Fecha: 25/05/2011 16:59:36
+Fichero: admin_controller.php
+*/
+?>
+
+			<div id="main">
+			
+				<h1>Preferencias</h1>
+				
+				<!-- BREADCRUMB -->
+				<?php echo View::partial('admin/breadcrumb')?>
+				<!-- fBREADCRUMB -->			
+				
+				<?php View::content() ?>			
+			
+				<?php echo Form::open('admin/preferences/edit/1','post') ?>
+				
+				<?php echo Form::hidden('preferences.id',null,$prefs->id).chr(10) ?>
+				<?php echo Form::hidden('preferences.language_id',null,$prefs->id).chr(10) ?>
+			
+				<!-- TABS -->
+				<div class="tabbable tabs-left">
+			
+					<!-- CONTROL TABS -->
+					<ul class="nav nav-tabs">
+						<li class="active"><a href="#ui-prefs-general" data-toggle="tab">Generales</a></li>		
+						<li><a href="#ui-prefs-maintenance" data-toggle="tab">Mantenimiento</a></li>
+						<li><a href="#ui-prefs-api" data-toggle="tab">APIs</a></li>
+						<li><a href="#ui-prefs-mail" data-toggle="tab">Correo</a></li>
+					</ul>
+					<!-- fCONTROL TABS -->
+				
+					<!-- CONTENT TABS -->
+					<div class="tab-content">		
+						
+						<div id="ui-prefs-general" class="tab-pane active">
+								
+							<fieldset><legend>Opciones generales</legend>
+							
+								<div class="frow">
+								<label for="preferences_preferences_title">Título del sitio web</label>
+								<?php echo Form::text('preferences.preferences_title','class="span10"',$prefs->preferences_title) ?>
+								</div>
+								
+								<div class="frow">
+								<label for="preferences_preferences_description">Descripción corta</label>
+								<?php echo Form::text('preferences.preferences_description','class="span10"',$prefs->preferences_description) ?>
+								</div>
+								
+								<div class="frow">
+								<label for="preferences_preferences_keywords">Palabras/frases clave</label>
+								<?php echo Form::text('preferences.preferences_keywords','class="span10"',$prefs->preferences_keywords) ?>
+								</div>			
+								
+								<div class="frow">
+								<label for="preferences_preferences_email">Correo electrónico</label>
+								<?php echo Form::text('preferences.preferences_email','class="span10"',$prefs->preferences_email) ?>
+								</div>					
+								
+								<div class="frow">
+								<label for="preferences_preferences_domain">Dominio</label>
+								<?php echo Form::text('preferences.preferences_domain','class="span10" readonly="readonly"', $domain) ?>
+								</div>
+
+							</fieldset>
+								
+						</div>
+					
+						<div id="ui-prefs-maintenance" class="tab-pane">
+					
+							<fieldset><legend>Estado mantenimiento</legend>
+							
+								<div class="frow">
+									<label for="preferences_preferences_maintenance0" class="radio"><?php echo Form::radio('preferences.preferences_maintenance', '0', 'class="radio"', true) ?>Activado</label>
+									<label for="preferences_preferences_maintenance1" class="radio"><?php echo Form::radio('preferences.preferences_maintenance', '1', 'class="radio"', false) ?>Desactivado</label>
+								</div>
+						
+							</fieldset>
+							
+							<fieldset><legend>Mensaje de mantenimiento</legend>	
+						
+								<div class="frow">
+								<label for="preferences_preferences_maintenance_text">Escriba su código HTML para mostrar a sus visitantes cuando su sitio web esté en mantenimiento</label>
+								<?php echo Form::textarea('preferences.preferences_maintenance_text','class="mainContent span10" rows="12" cols="10"',$prefs->preferences_maintenance_text) ?>
+								</div>			
+					
+							</fieldset>
+						
+						</div>
+					
+						<div id="ui-prefs-api" class="tab-pane">
+					
+							<fieldset><legend>APIs Google</legend>
+								
+								<div class="frow">
+								<label for="preferences_preferences_analytics">Código Google Analytics</label>
+								<?php echo Form::text('preferences.preferences_analytics','class="span5"',$prefs->preferences_analytics) ?>
+								</div>
+								
+								<div class="frow">
+								<label for="preferences_preferences_webmaster_tools">Código Webmaster Tools</label>
+								<?php echo Form::text('preferences.preferences_webmaster_tools','class="span5"',$prefs->preferences_webmaster_tools) ?>
+								</div>
+								
+								<div class="frow">
+								<label for="preferences_preferences_googlemaps">Código Google Maps</label>
+								<?php echo Form::text('preferences.preferences_googlemaps','class="span5"',$prefs->preferences_googlemaps) ?>
+								</div>
+					
+							</fieldset>		
+						
+						</div>									
+						
+						<div id="ui-prefs-mail" class="tab-pane">	
+						
+							<fieldset><legend>Servidor SMTP</legend>
+						
+								<div class="frow">
+								<label for="preferences_preferences_email">Dirección</label>
+								<?php echo Form::text('preferences.preferences_email','class="span5"',$prefs->preferences_email) ?>
+								</div>	
+					
+								<div class="frow">
+								<label for="preferences_preferences_puerto">Puerto</label>
+								<?php echo Form::text('preferences.preferences_email','class="col_1"','25') ?>
+								</div>	
+					
+							</fieldset>
+					
+							<fieldset><legend>Datos de acceso</legend>
+								
+								<div class="frow">
+								<label for="preferences_preferences_email">Usuario</label>
+								<?php echo Form::text('preferences.preferences_email','class="span5"',$prefs->preferences_email) ?>
+								</div>	
+								
+								<div class="frow">
+								<label for="preferences_preferences_email">Contraseña</label>
+								<?php echo Form::text('preferences.preferences_email','class="span5"',$prefs->preferences_email) ?>
+								</div>	
+								
+							</fieldset>	
+						
+						</div>
+					
+					</div>
+					<!-- fCONTENT TABS -->
+					
+				</div>
+				
+				<!-- TABS -->
+				
+				
+				<p>&nbsp;</p>
+				<div class="btn-group well">
+					<input type="submit" value="Guardar datos" class="btn btn-primary"/>
+					<input type="button" value="Salir sin guardar" class="btn" />
+				</div>
+			
+				<?php echo Form::close() ?>
+			
+			</div>
+				

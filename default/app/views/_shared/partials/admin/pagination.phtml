@@ -1,0 +1,32 @@
+<?php
+/*
+Author: Cesar Caballero Gallego
+Date: 09/05/2012 - 15:39:37
+File: pagination.phtml
+*/
+
+
+/***** Datos a calculas ***/
+$baseUrl = Router::get('action').'/'.$urlParams.'/';
+
+?>
+
+	<?php if ($total > 1) { ?>
+    <div class="pagination">
+	    <ul>
+			
+			<?php if ($page > 1) { ?>
+			<li><?php echo Html::linkAction($baseUrl.($page-1),'&laquo; Anterior','class="ui-paginationList"') ?></li>
+			<?php } ?>
+	    	<?php for ($i = 1; $i < $total + 1; $i++) { ?>
+		    <li<?php echo ($i == $page ? ' class="active"' : '') ?>>
+				<?php echo Html::linkAction($baseUrl.$i, $i, 'class="ui-paginationList"') ?>
+			</li>
+			<?php } ?>
+			<?php if ($page < $total) { ?>
+		    <li><?php echo Html::linkAction($baseUrl.($page+1),'Siguiente &raquo;','class="ui-paginationList"') ?></li>
+		    <?php } ?>
+		    
+	    </ul>
+    </div>
+    <?php } ?>

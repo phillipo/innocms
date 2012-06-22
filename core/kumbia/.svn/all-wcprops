@@ -1,0 +1,71 @@
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svnroot/kumbia/!svn/ver/930/branches/1.0/core/kumbia
+END
+load.php
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svnroot/kumbia/!svn/ver/889/branches/1.0/core/kumbia/load.php
+END
+controller_deprecated.php
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svnroot/kumbia/!svn/ver/924/branches/1.0/core/kumbia/controller_deprecated.php
+END
+console.php
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svnroot/kumbia/!svn/ver/930/branches/1.0/core/kumbia/console.php
+END
+dispatcher.php
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svnroot/kumbia/!svn/ver/924/branches/1.0/core/kumbia/dispatcher.php
+END
+kumbia_exception.php
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svnroot/kumbia/!svn/ver/808/branches/1.0/core/kumbia/kumbia_exception.php
+END
+router.php
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svnroot/kumbia/!svn/ver/862/branches/1.0/core/kumbia/router.php
+END
+controller.php
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svnroot/kumbia/!svn/ver/924/branches/1.0/core/kumbia/controller.php
+END
+kumbia_view.php
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svnroot/kumbia/!svn/ver/927/branches/1.0/core/kumbia/kumbia_view.php
+END
+bootstrap.php
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svnroot/kumbia/!svn/ver/908/branches/1.0/core/kumbia/bootstrap.php
+END
+util.php
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svnroot/kumbia/!svn/ver/840/branches/1.0/core/kumbia/util.php
+END
+config.php
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svnroot/kumbia/!svn/ver/638/branches/1.0/core/kumbia/config.php
+END

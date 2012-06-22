@@ -1,0 +1,40 @@
+9
+
+dir
+933
+https://kumbia.svn.sourceforge.net/svnroot/kumbia/branches/1.0/default/app/extensions
+https://kumbia.svn.sourceforge.net/svnroot/kumbia
+
+
+
+2011-05-17T17:03:35.446815Z
+923
+joanhey
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+ad0a42c4-7d27-0410-900f-806a70f5f88f
+
+console
+dir
+
+filters
+dir
+
+helpers
+dir
+
+scaffolds
+dir
+

@@ -1,0 +1,39 @@
+<?php
+/*
+Author: Cesar Caballero Gallego
+Date: 02/02/2012 - 22:46:35
+File: menubar.phtml
+*/
+
+echo $module;
+
+switch ($module) {
+	
+	case 'page':
+		
+		
+		echo 'Lateral de pagina';
+				
+	break;
+	
+	
+	case 'post':
+				
+		echo 'Lateral de contenido';
+		
+	break;
+	
+	
+	
+	default:
+		
+		echo 'Lateral de otros';
+	
+	break;
+	
+	
+	
+	
+}
+
+?>

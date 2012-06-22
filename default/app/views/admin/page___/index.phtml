@@ -1,0 +1,47 @@
+<?php
+/*
+Creado por: Phillipo
+Fecha: 25/05/2011 16:59:36
+Fichero: admin_controller.php
+*/
+?>
+
+<form id="ui-form" method="post" action="">
+
+<div id="content">
+
+	<div id="main">
+
+	<?php View::content() ?>
+	
+	<div class="ui-actions">
+		<ul class="button-group">		
+		<li><?php echo Html::linkAction('#', 'Cambiar estados','class="button pill icon edit removeIt"')?></li>
+		<li><?php echo Html::linkAction('#', 'Borrar elementos','class="button pill danger icon remove removeIt"')?></li>		
+		</ul>
+	</div>	
+	
+	<table id="" class="dataTable">
+	<thead>
+	<tr>
+		<th class="check"><?php echo Form::check('ui-checkAll','1','class="ui-checkAll" title="Seleccionar/deseleccionar todos"',false)?></th>
+		<th class="title">Titulo</th>
+		<th class="date">Última modificación</th>
+		<th class="id">ID</th>
+	</tr>
+	</thead>
+	<tbody>
+	<?php foreach ($contentList as $item) { ?>
+		<tr>
+		<td><?php echo Form::check('listID[]', $item->id, 'title="Seleccionar / deseleccionar"', false) ?></td>
+		<td class="title"><?php echo Html::linkAction('edit/'.$item->page_slug, $item->page_attribute_value) ?></td>
+		<td class="date"><?php echo Innocms::humanDate($item->page_modified_in,'d/m/Y H:i:s') ?></td>	
+		<td class="id"><?php echo $item->id ?></td>
+		</tr>
+	<?php } ?>
+	</tbody>
+	</table>
+	
+	</div>
+	
+</div>

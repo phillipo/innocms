@@ -1,0 +1,89 @@
+<?php
+/*
+Creado por: Phillipo
+Fecha: 25/05/2011 16:59:36
+Fichero: admin_controller.php
+*/
+?>
+
+
+
+			<div id="main">
+
+	
+				<h1>Idiomas</h1>
+				
+				<!-- BREADCRUMB -->
+				<?php echo View::partial('admin/breadcrumb')?>
+				<!-- fBREADCRUMB -->			
+				
+				<?php View::content() ?>	
+		
+				<!-- TABS -->
+				<div class="tabbable tabs-left">
+			
+						<!-- CONTROL TABS -->
+						<ul class="nav nav-tabs">
+							<li class="active"><a href="#ui-langs-general" data-toggle="tab">Idioma por defecto</a></li>		
+							<li><a href="#ui-langs-install" data-toggle="tab">Idiomas accesibles</a></li>
+						</ul>		
+						<!-- fCONTROL TABS -->
+					
+						<!-- CONTENT TABS -->
+						<div class="tab-content">
+					
+							<div id="ui-langs-general" class="tab-pane active">
+					
+								<fieldset>
+								<legend>Idioma por defecto</legend>
+								
+									<?php foreach ($availableLangs as $lang) { ?>
+										
+										<div class="frow">
+											
+											<label for="" class="radio">
+												<?php echo Form::radio('language_default', '1','class="radio"', $lang->language_default) ?>
+												<?php echo $lang->language_name ?>
+											
+											</label>				
+										
+										</div>
+									
+									
+									<?php } ?>
+						
+								</fieldset>
+								
+							</div>
+							
+							<div id="ui-langs-install" class="tab-pane">
+								
+								<fieldset><legend>Idiomas accesibles para el visitante</legend>
+										
+									<ul class="unstyled">	
+									<?php foreach ($availableLangs as $lang) { ?>
+										
+										<li>
+											<label class="checkbox"><?php echo $lang->language_name ?><input type="checkbox"></label>									
+										</li>
+									
+									<?php } ?>
+									</ul>
+									
+								</fieldset>
+				
+							</div>	
+							
+						</div>
+						<!-- fCONTENT TABS -->
+				
+				</div>
+				<!-- fTABS -->		
+						
+				<p>&nbsp;</p>
+				<div class="btn-group well">
+					<input type="submit" value="Guardar datos" class="btn btn-primary"/>
+					<input type="button" value="Salir sin guardar" class="btn" />
+				</div>		
+					
+			</div>

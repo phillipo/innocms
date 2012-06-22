@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svnroot/kumbia/!svn/ver/930/branches/1.0/core/console
+END
+kumbia.php
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svnroot/kumbia/!svn/ver/615/branches/1.0/core/console/kumbia.php
+END
+cache_console.php
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svnroot/kumbia/!svn/ver/713/branches/1.0/core/console/cache_console.php
+END
+model_console.php
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svnroot/kumbia/!svn/ver/712/branches/1.0/core/console/model_console.php
+END
+controller_console.php
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svnroot/kumbia/!svn/ver/712/branches/1.0/core/console/controller_console.php
+END

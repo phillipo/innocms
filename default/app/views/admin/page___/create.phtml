@@ -1,0 +1,137 @@
+<?php
+/*
+Creado por: Phillipo
+Fecha: 25/05/2011 16:59:36
+Fichero: admin_controller.php
+*/
+?>
+
+<?php echo Form::open('admin/content/create/page','post') ?>
+
+<?php echo Form::hidden('content.content_type', null, 'page') ?>
+<?php echo Form::hidden('content_definition.language_id',null,'1').chr(10) ?>
+
+<div id="content">
+
+	<div id="main">
+
+		<?php View::content() ?>
+	
+		<h1>Añadir nueva página</h1>
+		
+		<div class="block" style="width: 90%">
+		
+			<div class="frow">
+			<label for="content_definition_definition_title">Título</label>
+			<?php echo Form::text('content_definition.definition_title','class="inputField ui-slug"') ?>
+			</div>
+			
+			<div class="frow">
+			Enlace permanente: http://www.direccióndelblog.com/<span class="ui-slug-result"></span>
+			<?php echo Form::hidden('content_definition.definition_slug','class="ui-slug-result"') ?>
+			</div>
+			
+			<div class="frow">
+			<label for="content_definition_definition_content">Contenido</label>
+			<?php echo Form::textarea('content_definition.definition_content','class="mainContent ui-tinyContent inputField"') ?>
+			</div>
+			
+			<div class="frow">
+			<label for="content_definition_definition_summary">Extracto</label>
+			<?php echo Form::textarea('content_definition.definition_summary','class="mainSummary inputField"') ?>
+			</div>
+		
+		</div>
+		
+		<div class="block" style="width: 90%">
+		
+			<h2>SEO</h2>
+			<p>Los campos SEO se usan para mejorar la indexación de las páginas web.</p>
+			
+			<div class="frow">
+			<label for="content_definition_definition_seotitle">Titulo SEO</label>
+			<?php echo Form::text('content_definition.definition_seotitle','class="mainTitle inputField"') ?>
+			</div>
+			
+			<div class="frow">
+			<label for="content_definition_definition_seodesc">Descripción SEO</label>
+			<?php echo Form::textarea('content_definition.definition_seodesc','class="mainSummary inputField"') ?>
+			</div>
+			
+			<div class="frow">
+			<label for="content_definition_definition_seotags">Etiquetas SEO</label>
+			<?php echo Form::text('content_definition.definition_seotags','class="mainTitle inputField"') ?>
+			</div>	
+	
+		</div>
+	
+	</div>
+	
+</div>
+
+<!-- Barra de opciones relativas al contenido -->
+<div id="sidebar">
+
+	<div class="block">
+	<input type="submit" value="Submit" />
+	<input type="button" value="Ver" />
+	</div>
+
+	<div class="block">
+		
+		<h2>Publicar</h2>
+		
+		<fieldset>
+			<legend>Visibilidad</legend>
+			<label for="content_definition_definition_status0">Visible:</label><?php echo Form::radio('content_definition.definition_status', 'public', null, true) ?>
+			<label for="content_definition_definition_status1">Oculto:</label><?php echo Form::radio('content_definition.definition_status', 'private') ?>
+		</fieldset>	
+
+	</div>
+	
+	<div class="block">
+		<h2>Atributos de página</h2>
+		
+		<fieldset>
+		<legend>Página superior</legend>
+		<?php 
+		/*
+		View::helpers('contentSelect');
+    	$desplegable = new contentSelect(0,0,'&nbsp;&nbsp;');
+    	echo $desplegable->show('content_parent_id','content[content_parent_id]');
+    	*/	
+		?>
+		</fieldset>
+		
+		<p>&nbsp;</p>
+		
+		<fieldset>
+		<legend>Plantilla</legend>
+		<ul>
+			<li><input type="radio" value="template1">Plantilla #1</li>
+			<li><input type="radio" value="template2">Plantilla #2</li>
+			<li><input type="radio" value="template3">Plantilla #3</li>
+			<li><input type="radio" value="template4">Plantilla #4</li>
+		</ul>	
+		</fieldset>
+		
+		<p>&nbsp;</p>
+		
+		<fieldset>
+			<legend>Orden</legend>
+			<?php echo Form::text('content.content_sort_order', null, 0) ?>
+		</fieldset>		
+		
+	</div>
+
+	<div class="block">
+		<h2>Imagen destacada</h2>
+		
+		
+		<i>Se abrirá pantalla lightbox</i>
+	</div>
+	
+</div>
+
+
+<?php Form::close() ?>

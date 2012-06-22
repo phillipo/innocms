@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svnroot/kumbia/!svn/ver/514/branches/1.0/core/tests
+END
+active_record.php
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svnroot/kumbia/!svn/ver/514/branches/1.0/core/tests/active_record.php
+END
+flash.php
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svnroot/kumbia/!svn/ver/514/branches/1.0/core/tests/flash.php
+END
+adapters.php
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svnroot/kumbia/!svn/ver/514/branches/1.0/core/tests/adapters.php
+END

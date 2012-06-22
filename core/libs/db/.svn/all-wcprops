@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svnroot/kumbia/!svn/ver/921/branches/1.0/core/libs/db
+END
+db_base_interface.php
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svnroot/kumbia/!svn/ver/558/branches/1.0/core/libs/db/db_base_interface.php
+END
+db.php
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svnroot/kumbia/!svn/ver/921/branches/1.0/core/libs/db/db.php
+END
+db_base.php
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svnroot/kumbia/!svn/ver/561/branches/1.0/core/libs/db/db_base.php
+END

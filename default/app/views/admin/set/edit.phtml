@@ -1,0 +1,214 @@
+<?php
+/*
+Author: Cesar Caballero Gallego
+Date: 10/05/2012 - 16:31:10
+File: create.phtml
+*/
+?>
+
+			<div id="main">
+			
+				<!-- OPCIONES -->
+				<div class="sheet-options row-fluid span11">
+			
+					<div class="span7">
+						<h1>Editar Set / Agrupación</h1>
+					</div>
+			
+					<div class="span5">
+			
+						<div class=" pull-right">
+			
+							<div class="btn-group">
+								<a class="btn" href="#"> Acciones...</a> <a
+									class="btn dropdown-toggle" data-toggle="dropdown" href="#"> <span
+									class="caret"></span>
+								</a>
+								<ul class="dropdown-menu">
+									<li><?php echo Html::linkAction('copy','Duplicar','id="copy-'.$content->id.'" title="Crear un contenido igual" class="ui-copyIt"') ?></li>
+									<li><?php echo Html::linkAction('move','Mover','id="move-'.$content->id.'" title="Mover el contenido a otra categoria" class="ui-moveIt"') ?></li>
+									<li class="divider">&nbsp;</li>
+									<li><?php echo Html::linkAction('delete','Borrar','id="remove-'.$content->id.'" title="Eliminar este contenido" class="removeIt"') ?></li>
+								</ul>
+			
+							</div>
+			
+						</div>
+			
+					</div>
+			
+				</div>
+				<!-- fOPCIONES -->		
+				
+				<div class="clearfix"><!-- BR --></div>	
+				
+				<!-- BREADCRUMB -->
+				<?php echo View::partial('admin/breadcrumb')?>
+				<!-- fBREADCRUMB -->					
+				
+				<!-- MENSAJES Y AVISOS -->
+				<?php View::content() ?>
+				<!-- fMENSAJES Y AVISOS -->
+				
+				<?php echo Form::openMultipart('admin/set/edit/'.$content->id.'/'.base64_encode($referer)).EOL ?>
+				<?php echo Form::hidden('set.content_language_id','','1').EOL ?>
+				<?php echo Form::hidden('set.content_type','','set').EOL ?>	
+				<?php echo Form::hidden('attributes.files','', $attributes->files).EOL ?>						
+				
+				<!-- GRUPO PESTAÑAS -->
+				<div class="tabbable tabs-left">		
+			
+					<!-- CONTROL PESTAÑAS -->
+					<ul class="nav nav-tabs">
+						<li class="active"><a href="#ui-content-content" data-toggle="tab">Datos generales</a></li>
+						<li><a href="#ui-content-media" data-toggle="tab">Media asociado</a></li>
+						<li><a href="#ui-content-history" data-toggle="tab">Historial</a></li>
+					</ul>
+					<!-- fCONTROL PESTAÑAS -->
+				
+					<!-- PESTAÑAS -->
+					<div class="tab-content">		
+						
+						<!-- PESTAÑA GENERAL -->
+						<div id="ui-content-content" class="tab-pane active">
+						
+							<fieldset><legend>Datos generales</legend>	
+						
+								<div class="frow">
+								<label for="attributes_title">Título</label>
+								<?php echo Form::text('attributes.title','class="span12 ui-slug"',$attributes->title).EOL ?>
+								</div>
+								
+								<div class="frow">
+								<?php echo Form::hidden('set.content_slug','class="ui-slug-result"',$content->content_slug).EOL ?>
+								</div>				
+							
+							</fieldset>
+							
+							<fieldset><legend>Contenidos</legend>
+							
+								<div class="frow">					
+								<label for="attributes_content">Descripción<span class="form-helper">( Texto resumido usado para listados )</span></label>
+								<?php echo Form::textarea('attributes.content','class="span12"',$attributes->content) ?>					
+								</div>					
+							
+							</fieldset>		
+							
+							<fieldset><legend>Visibilidad</legend>
+							
+								<div class="frow">
+									<label for="set_content_status0" class="radio">
+									<?php echo Form::radio('set.content_status', 'public', '', $content->content_status == 'public' ? true : false).EOL ?>
+									Publicado
+									</label>
+								</div>
+								
+								<div class="frow">
+									<label for="set_content_status1" class="radio">
+									<?php echo Form::radio('set.content_status', 'private', '', $content->content_status == 'private' ? true : false).EOL ?>
+									Privado
+									</label>			
+								</div>
+													
+							</fieldset>	
+											
+						</div>	
+						<!-- fPESTAÑA GENERAL -->
+						
+						<div class="clearfix"><!-- BR --></div>
+		
+						<!-- PESTAÑA FILES -->
+						<div id="ui-content-media" class="tab-pane">
+						
+							<fieldset><legend>CONTENIDO MULTIMEDIA ASOCIADO</legend>
+							
+								<button id="ui-browserFileSet" class="btn"><i class="icon-pencil">&nbsp;</i> Mostrar ficheros</button>
+								
+								<div id="browserFileSet" class="well">
+									<ul class="unstyled">
+									<?php foreach ($files as $file) { ?>
+										<li>
+											<div class="btn-group"><a class="ui-filename btn btn-mini"><i class="icon-file"></i> <?php echo $file->content_slug ?></a><a class="ui-addFileSet btn btn-mini btn-success" id="<?php echo 'addfileset-'.$file->id ?>" title="Añadir elemento de la lista"><i class="icon-plus">&nbsp;</i></a></div>										
+										</li>
+									<?php } ?>
+									</ul>
+									<hr>
+								</div>
+							
+								<div class="clearfix"><!-- BR --></div>
+							
+							    <ul id="mySortable" class="thumbnails ui-sortfiles">
+							    	<?php
+							    	if (!empty($attributes->files)) {							    	
+							    		$filesId = explode(',',$attributes->files); 
+							    		foreach ($filesId as $id) {
+							    	?>
+							    	<li class="span2" id="itemSet-<?php echo $id; ?>">
+							    		<div class="thumbnail">
+							    			<img src="http://placehold.it/260x180" alt="">
+							    			<div class="caption">
+							    				<h5><?php echo Innocms::trimText('Nombre fichero #'.$id, 15) ?></h5>
+						    					<div class="btn-group">
+						    						<a class="ui-removeFileSet btn btn-mini btn-danger" id="<?php echo 'removefileset-'.$id ?>" href="<?php echo '/admin/set/removeItem/'.$content->id.'/'.$id ?>" title="Quitar elemento de la lista">Quitar</a>
+						    						<a class="btn btn-mini btn-primary" href="<?php echo '/admin/filebrowser/edit/'.$id.'/'.base64_encode($referer) ?>" title="Editar elemento de la lista">Editar</a>
+						    					</div>
+							    			</div>
+							    		</div>
+							    	</li>
+							    	<?php							    	
+							    		}
+							    	}
+							    	?>
+							    </ul>				
+							
+							
+							</fieldset>					
+						
+						</div>
+						<!-- fPESTAÑA FILES -->			
+		
+						<div class="clearfix"><!-- BR --></div>				
+						
+						<!-- PESTAÑA HISTORIAL -->
+						<div id="ui-content-history" class="tab-pane">
+							
+							<fieldset>
+							<legend>Historial de modificaciones</legend>
+							
+							<div class="frow">
+							<label for="content_created_at">Creado:</label>			
+							<?php echo Form::text('content_created_at','class="noneditable span2" readonly="readonly"', Innocms::humanDate($content->content_created_at,'d-m-Y H:i:s')); ?>
+							</div>
+							<div class="frow">
+							<label for="content_modified_in">Modificado:</label>
+							<?php echo Form::text('content_modified_in','class="noneditable span2" readonly="readonly"', Innocms::humanDate($content->content_modified_in,'d-m-Y H:i:s')); ?>
+							</div>
+							</fieldset>
+						
+						</div>
+						<!-- fPESTAÑA HISTORIAL -->
+				
+					</div>
+				
+				</div>
+				
+				<!-- ACTIONS -->
+				<div class="form-actions well">
+
+					<div class="span6">
+						<?php echo Html::link($referer, 'Descartar','class="btn btn-danger"') ?>
+					</div>
+					<div class="span6">
+						<div class="btn-group pull-right">
+							<input type="submit" value="Guardar datos" class="btn btn-primary" />
+							<input type="button" value="Vista previa" class="btn" />							
+						</div>
+					</div>
+					
+				</div>
+				<!-- fACTIONS -->
+				
+						
+				<?php echo Form::close() ?>
+					
+			</div>

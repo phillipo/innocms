@@ -1,0 +1,15 @@
+<?php
+/*
+Author: Cesar Caballero Gallego
+Date: 13/06/2012 - 10:52:46
+File: design.phtml
+*/
+?>
+
+<?php View::content() ?>
+
+<div id="ui-designer">
+<?php 
+echo include (dirname(APP_PATH).'/public/templates'.$pagetemplate->template_folder.'/'.$pagetemplate->template_file);
+?>
+</div>

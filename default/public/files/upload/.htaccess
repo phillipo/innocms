@@ -1,0 +1,4 @@
+ForceType application/octet-stream
+<FilesMatch "(?i)\.(doc|docx|xls|xlsx|xla|wmv|mov|qt|avi|mpeg|mpg|odt|ods|txt|pdf|rar|zip|gzip|tar)$">
+  ForceType none
+</FilesMatch>

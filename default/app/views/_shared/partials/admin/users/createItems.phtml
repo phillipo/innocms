@@ -1,0 +1,21 @@
+<?php
+/*
+Author: Cesar Caballero Gallego
+Date: 07/02/2012 - 20:34:48
+File: createItems.phtml
+*/
+?>
+
+			<div class="btn-group">
+				<a class="btn btn-primary" href="#">
+					<i class="icon-plus icon-white"></i>&nbsp;&nbsp;&nbsp;&nbsp;Crear...</a> 
+					<a class="btn btn-primary dropdown-toggle" data-toggle="dropdown" href="#">
+					<span class="caret"></span>
+				</a>
+				<ul class="dropdown-menu">
+					<li><?php echo Html::link('admin/users/create','<i class="icon-pencil"></i> Usuario') ?></li>
+					<li><?php echo Html::link('admin/usergroup/create','<i class="icon-pencil"></i> Grupo usuario') ?></li>
+					<li class="divider"></li>
+					<li><a href="#"><i class="icon-ban-circle"></i> Páginas</a></li>
+				</ul>
+			</div>

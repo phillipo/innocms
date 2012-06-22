@@ -1,0 +1,22 @@
+<?php echo View::partial('admin/html_header',0,array('prefs'=>$prefs)).EOL ?>
+<body id="home"<?php if (isset($pagetemplate)) echo ' class="'.$pagetemplate->template_slug.'"' ?>>
+	
+		<!-- NAVBAR -->
+		<div class="navbar">
+			<?php echo View::partial('admin/navbar',0,array('prefs'=>$prefs,'searchTerm'=>$searchTerm)).EOL ?>
+		</div>	
+		<div class="clearfix"><!-- BR --></div>	
+		<!-- fNAVBAR -->		
+	
+	<div class="container">	
+
+		<!-- CONTENT -->
+		<div class="content">			
+			<?php echo View::content(); ?>	
+		</div>
+		<!-- fCONTENT -->
+	
+	</div>
+		
+</body>
+</html>

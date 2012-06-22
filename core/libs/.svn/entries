@@ -1,0 +1,103 @@
+9
+
+dir
+933
+https://kumbia.svn.sourceforge.net/svnroot/kumbia/branches/1.0/core/libs
+https://kumbia.svn.sourceforge.net/svnroot/kumbia
+
+
+
+2011-05-17T17:05:50.930413Z
+932
+joanhey
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+ad0a42c4-7d27-0410-900f-806a70f5f88f
+
+acl
+dir
+
+acl2
+dir
+
+auth
+dir
+
+auth2
+dir
+
+benchmark
+dir
+
+cache
+dir
+
+date
+dir
+
+db
+dir
+
+deprecated
+dir
+
+event
+dir
+
+excel
+dir
+
+filter
+dir
+
+fpdf
+dir
+
+i18n
+dir
+
+input
+dir
+
+kumbia_active_record
+dir
+
+libchart
+dir
+
+logger
+dir
+
+phpmailer
+dir
+
+registry
+dir
+
+report
+dir
+
+security
+dir
+
+session
+dir
+
+upload
+dir
+
+validate
+dir
+

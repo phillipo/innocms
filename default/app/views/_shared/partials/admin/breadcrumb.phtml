@@ -1,0 +1,21 @@
+<?php
+/*
+Author: Cesar Caballero Gallego
+Date: 30/04/2012 - 15:12:06
+File: breadcrumb.php
+*/
+?>
+
+<?php if(Config::get('config.application.breadcrumb')): ?>
+<div id="breadcrumb">
+  <?php
+    $Crumb = new breadcrumb();
+    $Crumb->class_ul = 'breadcrumb';
+    $Crumb->separator = '&nbsp;/&nbsp;';
+    $Crumb->addCrumb(0, _('Inicio'), Router::get('module').'/dashboard');
+    $Crumb->addCrumb(1, Router::get('controller'), Router::get('module') . '/' . Router::get('controller'));
+    $Crumb->addCrumb(2, Router::get('action'), Router::get('module') . '/' . Router::get('controller') . '/' . Router::get('action'));
+    echo $Crumb->display();
+  ?>
+</div>
+<?php endif; ?>

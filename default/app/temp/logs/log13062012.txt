@@ -1,0 +1,90 @@
+[Wed, 13 Jun 12 10:50:53 +0200][DEBUG] DESCRIBE `content`
+[Wed, 13 Jun 12 10:50:53 +0200][DEBUG] 
+				SELECT content.id as id, content.id as rootId, content.*, attr.content_attribute_key, attr.content_attribute_value, (SELECT count(*) FROM content WHERE content_parent_id = rootId) as totalContents
+				FROM content INNER JOIN content_attributes as attr ON content.id = attr.content_id 
+				WHERE content_language_id = "1" AND content_attribute_key = "TITLE" AND content_type = "post" ORDER BY content_sort_order ASC
+[Wed, 13 Jun 12 10:50:55 +0200][DEBUG] SELECT * FROM content WHERE content.content_slug = "all" LIMIT 1
+[Wed, 13 Jun 12 10:50:55 +0200][DEBUG] SELECT * FROM content WHERE content.id = "0" LIMIT 1
+[Wed, 13 Jun 12 10:50:55 +0200][DEBUG] 
+				SELECT content.id as id, content.id as rootId, content.*, attr.content_attribute_key, attr.content_attribute_value, (SELECT count(*) FROM content WHERE content_parent_id = rootId) as totalContents
+				FROM content INNER JOIN content_attributes as attr ON content.id = attr.content_id 
+				WHERE content_language_id = "1" AND content_attribute_key = "TITLE" AND content_type = "category" AND content_parent_id = "0" ORDER BY content_attribute_value ASC
+[Wed, 13 Jun 12 10:51:02 +0200][DEBUG] DESCRIBE `page`
+[Wed, 13 Jun 12 10:51:02 +0200][DEBUG] 
+				SELECT DISTINCT page.id as page_id, page.*, attr.*
+				FROM page INNER JOIN page_attributes as attr ON page.id = attr.page_id 
+				WHERE page_attribute_key = "TITLE" AND page_language_id = "1" ORDER BY page_sort_order ASC
+[Wed, 13 Jun 12 10:51:02 +0200][DEBUG] 
+				SELECT DISTINCT page.id as page_id, page.*, attr.*
+				FROM page INNER JOIN page_attributes as attr ON page.id = attr.page_id 
+				WHERE page_attribute_key = "TITLE" AND page_language_id = "1" AND page_parent_id = "0" ORDER BY page_sort_order ASC
+[Wed, 13 Jun 12 10:51:02 +0200][DEBUG] 
+				SELECT DISTINCT page.id as page_id, page.*, attr.*
+				FROM page INNER JOIN page_attributes as attr ON page.id = attr.page_id 
+				WHERE page_attribute_key = "TITLE" AND page_language_id = "1" AND page_parent_id = "20" ORDER BY page_attribute_value
+[Wed, 13 Jun 12 10:51:02 +0200][DEBUG] 
+				SELECT DISTINCT page.id as page_id, page.*, attr.*
+				FROM page INNER JOIN page_attributes as attr ON page.id = attr.page_id 
+				WHERE page_attribute_key = "TITLE" AND page_language_id = "1" AND page_parent_id = "20" ORDER BY page_sort_order ASC
+[Wed, 13 Jun 12 10:51:02 +0200][DEBUG] 
+				SELECT DISTINCT page.id as page_id, page.*, attr.*
+				FROM page INNER JOIN page_attributes as attr ON page.id = attr.page_id 
+				WHERE page_attribute_key = "TITLE" AND page_language_id = "1" AND page_parent_id = "18" ORDER BY page_attribute_value
+[Wed, 13 Jun 12 10:51:02 +0200][DEBUG] 
+				SELECT DISTINCT page.id as page_id, page.*, attr.*
+				FROM page INNER JOIN page_attributes as attr ON page.id = attr.page_id 
+				WHERE page_attribute_key = "TITLE" AND page_language_id = "1" AND page_parent_id = "22" ORDER BY page_attribute_value
+[Wed, 13 Jun 12 11:02:56 +0200][DEBUG] DESCRIBE `page`
+[Wed, 13 Jun 12 11:02:56 +0200][DEBUG] SELECT * FROM page WHERE page.id = "0" LIMIT 1
+[Wed, 13 Jun 12 11:02:56 +0200][DEBUG] SELECT id,page_parent_id,page_image_id,page_user_id,page_language_id,page_slug,page_author,page_password,page_type,page_mime_type,page_template_id,page_template_params,page_created_at,page_modified_in,page_publish_up,page_publish_down,page_publish_expires,page_redirect,page_sort_order,page_status FROM page ORDER BY page_sort_order desc
+[Wed, 13 Jun 12 11:03:26 +0200][DEBUG] DESCRIBE `page`
+[Wed, 13 Jun 12 11:03:26 +0200][DEBUG] SELECT * FROM page WHERE page.id = "0" LIMIT 1
+[Wed, 13 Jun 12 11:03:26 +0200][DEBUG] SELECT id,page_parent_id,page_image_id,page_user_id,page_language_id,page_slug,page_author,page_password,page_type,page_mime_type,page_template_id,page_template_params,page_created_at,page_modified_in,page_publish_up,page_publish_down,page_publish_expires,page_redirect,page_sort_order,page_status FROM page ORDER BY page_sort_order desc
+[Wed, 13 Jun 12 11:03:36 +0200][DEBUG] DESCRIBE `page`
+[Wed, 13 Jun 12 11:03:36 +0200][DEBUG] SELECT * FROM page WHERE page.id = "0" LIMIT 1
+[Wed, 13 Jun 12 11:03:36 +0200][DEBUG] SELECT id,page_parent_id,page_image_id,page_user_id,page_language_id,page_slug,page_author,page_password,page_type,page_mime_type,page_template_id,page_template_params,page_created_at,page_modified_in,page_publish_up,page_publish_down,page_publish_expires,page_redirect,page_sort_order,page_status FROM page ORDER BY page_sort_order desc
+[Wed, 13 Jun 12 11:03:41 +0200][DEBUG] DESCRIBE `page`
+[Wed, 13 Jun 12 11:03:41 +0200][DEBUG] SELECT * FROM page WHERE page.id = "0" LIMIT 1
+[Wed, 13 Jun 12 11:03:41 +0200][DEBUG] SELECT id,page_parent_id,page_image_id,page_user_id,page_language_id,page_slug,page_author,page_password,page_type,page_mime_type,page_template_id,page_template_params,page_created_at,page_modified_in,page_publish_up,page_publish_down,page_publish_expires,page_redirect,page_sort_order,page_status FROM page ORDER BY page_sort_order desc
+[Wed, 13 Jun 12 11:03:56 +0200][DEBUG] DESCRIBE `page`
+[Wed, 13 Jun 12 11:03:56 +0200][DEBUG] SELECT * FROM page WHERE page.id = "0" LIMIT 1
+[Wed, 13 Jun 12 11:03:56 +0200][DEBUG] SELECT id,page_parent_id,page_image_id,page_user_id,page_language_id,page_slug,page_author,page_password,page_type,page_mime_type,page_template_id,page_template_params,page_created_at,page_modified_in,page_publish_up,page_publish_down,page_publish_expires,page_redirect,page_sort_order,page_status FROM page ORDER BY page_sort_order desc
+[Wed, 13 Jun 12 11:04:34 +0200][DEBUG] DESCRIBE `page`
+[Wed, 13 Jun 12 11:04:34 +0200][DEBUG] SELECT id,page_parent_id,page_image_id,page_user_id,page_language_id,page_slug,page_author,page_password,page_type,page_mime_type,page_template_id,page_template_params,page_created_at,page_modified_in,page_publish_up,page_publish_down,page_publish_expires,page_redirect,page_sort_order,page_status FROM page ORDER BY page_sort_order desc
+[Wed, 13 Jun 12 11:05:33 +0200][DEBUG] DESCRIBE `page`
+[Wed, 13 Jun 12 11:05:33 +0200][DEBUG] SELECT id,page_parent_id,page_image_id,page_user_id,page_language_id,page_slug,page_author,page_password,page_type,page_mime_type,page_template_id,page_template_params,page_created_at,page_modified_in,page_publish_up,page_publish_down,page_publish_expires,page_redirect,page_sort_order,page_status FROM page WHERE limit:5 ORDER BY page_sort_order desc
+[Wed, 13 Jun 12 11:05:33 +0200][ERROR] You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'limit:5 ORDER BY page_sort_order desc' at line 1 al ejecutar <em>"SELECT id,page_parent_id,page_image_id,page_user_id,page_language_id,page_slug,page_author,page_password,page_type,page_mime_type,page_template_id,page_template_params,page_created_at,page_modified_in,page_publish_up,page_publish_down,page_publish_expires,page_redirect,page_sort_order,page_status FROM page WHERE limit:5 ORDER BY page_sort_order desc"</em>
+[Wed, 13 Jun 12 11:05:43 +0200][DEBUG] DESCRIBE `page`
+[Wed, 13 Jun 12 11:05:43 +0200][DEBUG] SELECT id,page_parent_id,page_image_id,page_user_id,page_language_id,page_slug,page_author,page_password,page_type,page_mime_type,page_template_id,page_template_params,page_created_at,page_modified_in,page_publish_up,page_publish_down,page_publish_expires,page_redirect,page_sort_order,page_status FROM page WHERE limit 5 ORDER BY page_sort_order desc
+[Wed, 13 Jun 12 11:05:43 +0200][ERROR] You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'limit 5 ORDER BY page_sort_order desc' at line 1 al ejecutar <em>"SELECT id,page_parent_id,page_image_id,page_user_id,page_language_id,page_slug,page_author,page_password,page_type,page_mime_type,page_template_id,page_template_params,page_created_at,page_modified_in,page_publish_up,page_publish_down,page_publish_expires,page_redirect,page_sort_order,page_status FROM page WHERE limit 5 ORDER BY page_sort_order desc"</em>
+[Wed, 13 Jun 12 11:06:24 +0200][DEBUG] DESCRIBE `page`
+[Wed, 13 Jun 12 11:06:24 +0200][DEBUG] SELECT id,page_parent_id,page_image_id,page_user_id,page_language_id,page_slug,page_author,page_password,page_type,page_mime_type,page_template_id,page_template_params,page_created_at,page_modified_in,page_publish_up,page_publish_down,page_publish_expires,page_redirect,page_sort_order,page_status FROM page WHERE id = '' ORDER BY page_sort_order desc LIMIT 5
+[Wed, 13 Jun 12 11:06:33 +0200][DEBUG] DESCRIBE `page`
+[Wed, 13 Jun 12 11:06:33 +0200][DEBUG] SELECT id,page_parent_id,page_image_id,page_user_id,page_language_id,page_slug,page_author,page_password,page_type,page_mime_type,page_template_id,page_template_params,page_created_at,page_modified_in,page_publish_up,page_publish_down,page_publish_expires,page_redirect,page_sort_order,page_status FROM page WHERE id = '' ORDER BY page_sort_order desc LIMIT 1
+[Wed, 13 Jun 12 11:08:58 +0200][DEBUG] DESCRIBE `page`
+[Wed, 13 Jun 12 11:08:58 +0200][DEBUG] SELECT id,page_parent_id,page_image_id,page_user_id,page_language_id,page_slug,page_author,page_password,page_type,page_mime_type,page_template_id,page_template_params,page_created_at,page_modified_in,page_publish_up,page_publish_down,page_publish_expires,page_redirect,page_sort_order,page_status FROM page WHERE conditions: ORDER BY page_sort_order desc LIMIT 1
+[Wed, 13 Jun 12 11:08:58 +0200][ERROR] You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ': ORDER BY page_sort_order desc LIMIT 1' at line 1 al ejecutar <em>"SELECT id,page_parent_id,page_image_id,page_user_id,page_language_id,page_slug,page_author,page_password,page_type,page_mime_type,page_template_id,page_template_params,page_created_at,page_modified_in,page_publish_up,page_publish_down,page_publish_expires,page_redirect,page_sort_order,page_status FROM page WHERE conditions: ORDER BY page_sort_order desc LIMIT 1"</em>
+[Wed, 13 Jun 12 11:09:21 +0200][DEBUG] DESCRIBE `page`
+[Wed, 13 Jun 12 11:09:21 +0200][DEBUG] SELECT id,page_parent_id,page_image_id,page_user_id,page_language_id,page_slug,page_author,page_password,page_type,page_mime_type,page_template_id,page_template_params,page_created_at,page_modified_in,page_publish_up,page_publish_down,page_publish_expires,page_redirect,page_sort_order,page_status FROM page WHERE page_status = 'active' ORDER BY page_sort_order desc LIMIT 1
+[Wed, 13 Jun 12 11:10:33 +0200][DEBUG] DESCRIBE `page`
+[Wed, 13 Jun 12 11:10:33 +0200][DEBUG] SELECT id,page_parent_id,page_image_id,page_user_id,page_language_id,page_slug,page_author,page_password,page_type,page_mime_type,page_template_id,page_template_params,page_created_at,page_modified_in,page_publish_up,page_publish_down,page_publish_expires,page_redirect,page_sort_order,page_status FROM page WHERE page_status = 'draft' ORDER BY page_sort_order desc LIMIT 1
+[Wed, 13 Jun 12 11:18:02 +0200][DEBUG] DESCRIBE `page`
+[Wed, 13 Jun 12 11:18:02 +0200][DEBUG] SELECT id,page_parent_id,page_image_id,page_user_id,page_language_id,page_slug,page_author,page_password,page_type,page_mime_type,page_template_id,page_template_params,page_created_at,page_modified_in,page_publish_up,page_publish_down,page_publish_expires,page_redirect,page_sort_order,page_status FROM page WHERE page_status = 'draft' ORDER BY page_sort_order desc LIMIT 1
+[Wed, 13 Jun 12 11:18:31 +0200][DEBUG] DESCRIBE `page`
+[Wed, 13 Jun 12 11:18:31 +0200][DEBUG] SELECT * FROM page WHERE page.id = "3" LIMIT 1
+[Wed, 13 Jun 12 11:18:40 +0200][DEBUG] DESCRIBE `page`
+[Wed, 13 Jun 12 11:18:40 +0200][DEBUG] SELECT * FROM page WHERE page.id = "20" LIMIT 1
+[Wed, 13 Jun 12 11:20:21 +0200][DEBUG] DESCRIBE `page`
+[Wed, 13 Jun 12 11:20:21 +0200][DEBUG] SELECT * FROM page WHERE page.id = "20" LIMIT 1
+[Wed, 13 Jun 12 11:20:26 +0200][DEBUG] DESCRIBE `page`
+[Wed, 13 Jun 12 11:20:26 +0200][DEBUG] SELECT id,page_parent_id,page_image_id,page_user_id,page_language_id,page_slug,page_author,page_password,page_type,page_mime_type,page_template_id,page_template_params,page_created_at,page_modified_in,page_publish_up,page_publish_down,page_publish_expires,page_redirect,page_sort_order,page_status FROM page WHERE page_status = 'draft' ORDER BY page_parent_id, page_sort_order desc LIMIT 1
+[Wed, 13 Jun 12 11:20:59 +0200][DEBUG] DESCRIBE `page`
+[Wed, 13 Jun 12 11:20:59 +0200][DEBUG] SELECT id,page_parent_id,page_image_id,page_user_id,page_language_id,page_slug,page_author,page_password,page_type,page_mime_type,page_template_id,page_template_params,page_created_at,page_modified_in,page_publish_up,page_publish_down,page_publish_expires,page_redirect,page_sort_order,page_status FROM page WHERE page_status = 'draft' ORDER BY page_parent_id, page_sort_order desc LIMIT 1
+[Wed, 13 Jun 12 11:21:05 +0200][DEBUG] DESCRIBE `page`
+[Wed, 13 Jun 12 11:21:05 +0200][DEBUG] SELECT * FROM page WHERE page.id = "20" LIMIT 1
+[Wed, 13 Jun 12 11:21:23 +0200][DEBUG] DESCRIBE `page`
+[Wed, 13 Jun 12 11:21:23 +0200][DEBUG] SELECT id,page_parent_id,page_image_id,page_user_id,page_language_id,page_slug,page_author,page_password,page_type,page_mime_type,page_template_id,page_template_params,page_created_at,page_modified_in,page_publish_up,page_publish_down,page_publish_expires,page_redirect,page_sort_order,page_status FROM page WHERE page_status = 'draft' ORDER BY page_parent_id, page_sort_order desc LIMIT 1
+[Wed, 13 Jun 12 11:22:00 +0200][DEBUG] DESCRIBE `page`
+[Wed, 13 Jun 12 11:22:00 +0200][DEBUG] SELECT id,page_parent_id,page_image_id,page_user_id,page_language_id,page_slug,page_author,page_password,page_type,page_mime_type,page_template_id,page_template_params,page_created_at,page_modified_in,page_publish_up,page_publish_down,page_publish_expires,page_redirect,page_sort_order,page_status FROM page WHERE page_status = 'draft' ORDER BY page_parent_id ASC, page_sort_order ASC LIMIT 1
+[Wed, 13 Jun 12 19:14:18 +0200][DEBUG] DESCRIBE `page`
+[Wed, 13 Jun 12 19:14:18 +0200][DEBUG] SELECT id,page_parent_id,page_image_id,page_user_id,page_language_id,page_slug,page_author,page_password,page_type,page_mime_type,page_template_id,page_template_params,page_created_at,page_modified_in,page_publish_up,page_publish_down,page_publish_expires,page_redirect,page_sort_order,page_status FROM page WHERE page_status = 'draft' ORDER BY page_parent_id ASC, page_sort_order ASC LIMIT 1

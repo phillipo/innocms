@@ -1,0 +1,78 @@
+<?php
+/*
+Creado por: Phillipo
+Fecha: 25/05/2011 16:59:36
+Fichero: admin_controller.php
+*/
+?>
+
+			<div id="main" class="pages">
+			
+				<div class="row-fluid">
+					<div class="span6"><h1>Listado de contenidos</h1></div>
+					<div class="span6"><div class="pull-right"><?php echo View::partial('admin/createItems',0,array())?></div></div>
+				</div>
+			
+				<!-- BREADCRUMB -->
+				<?php echo View::partial('admin/breadcrumb')?>
+				<!-- fBREADCRUMB -->	
+	
+				<hr>	
+			
+				<?php View::content() ?>
+						
+				<!-- Opciones listado -->
+				<?php echo View::partial('admin/optionsLists',0,$optionsListData) ?>
+				<!-- fOpciones listado -->
+				
+				<!-- RESULTS -->
+				<div id="pageList">					
+					
+					<?php if (sizeof($pages) > 0 ) { ?>	
+					
+					<?php echo Form::open('','post','id="ui-form"'); ?>	
+				
+					<!-- RESULTS TABLE -->	
+					<table class="table table-bordered table-striped">
+					<thead>
+					<tr>
+						<th class="c_checker"><?php echo Form::check('ui-checkAll','1','class="ui-checkAll" title="Seleccionar/deseleccionar todos"',false)?></th>
+						<th>Titulo</th>
+						<th class="c_date">Última modificación</th>
+						<th class="c_id">ID</th>
+					</tr>
+					</thead>
+					<tbody>
+					<?php 
+					foreach ($pages[$pageId] as $item) { 
+						$date = Innocms::humanDate($item->content_modified_in,'d/m/Y H:i:s');
+					?>
+						<tr>
+						<td><input type="checkbox" id="<?php echo 'listID-'.$item->id ?>" name="listID[]" value="<?php echo $item->id ?>" title="Seleccionar / deseleccionar"></td>
+						<td><?php echo Html::linkAction('edit/'.$item->id.'/'.Innocms::refererEncode(), $item->content_attribute_value) ?></td>
+						<td><?php echo ($date == '01/01/1970 01:00:00' ? 'Nunca' : $date)  ?></td>	
+						<td><?php echo $item->id ?></td>
+						</tr>
+					<?php } ?>
+					</tbody>
+					</table>
+					<!-- fRESULTS TABLE -->
+						
+					<?php echo Form::close() ?>
+					
+					<!-- PAGINATION -->
+					<?php View::partial('admin/pagination', false, $paginationData); ?>
+					<!-- fPAGINATION -->					
+					
+				<?php } else { ?>
+				
+					<!-- noITEMS -->
+					<?php View::partial('admin/noItems', false); ?>
+					<!-- fnoITEMS -->	
+					
+				<?php } ?>
+				
+				</div>	
+				<!-- fRESULTS -->
+				
+			</div>

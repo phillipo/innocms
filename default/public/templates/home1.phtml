@@ -1,0 +1,100 @@
+<?php
+/*
+Author: Cesar Caballero Gallego
+Date: 23/02/2012 - 13:27:47
+File: home1.phtml
+*/
+?>
+
+							<div id="ui-preview-template-<?php echo $template->id ?>" class="ui-preview-template">
+								
+								<div class="row-fluid">	
+									
+									<div class="col_12 empty">
+									
+									<p><a href="#" id="moduleList-1" class="addModule button icon add">Añadir modulo</a></p>
+									<ul id="zone1" class="ui-module-sortable">
+										<?php
+										foreach ($modules as $module) {
+										
+											if ($module->zone_id == 1) {
+												echo '<li id="module'.$module->id.'" class="blockModule">'.EOL;
+												echo '<a id="editModule'.$module->id.'" class="button pill icon edit">Editar</a>';
+												echo '<a href="#"  id="removeModule'.$module->id.'" class="removeModule button pill icon trash">Borrar</a>';
+												echo '<a ref="#" class="button pill icon edit">Ocultar</a>'.EOL;
+												echo '</li>'.EOL;												
+											}
+											
+										}
+										?>								
+									</ul>
+									
+									</div>
+								
+								</div>
+								
+								<div class="clear"><!-- BR --></div>
+								<div class="row-fluid">				
+									
+									<div class="col_4 empty">
+										<p><a href="#" id="moduleList-2" class="addModule button icon add">Añadir modulo</a></p>
+										<ul id="zone2" class="ui-module-sortable">
+										<?php
+										foreach ($modules as $module) {
+										
+											if ($module->zone_id == 2) {
+												echo '<li id="module'.$module->id.'" class="blockModule">'.EOL;
+												echo '<a id="editModule'.$module->id.'" class="button pill icon edit">Editar</a>';
+												echo '<a href="#"  id="removeModule'.$module->id.'" class="removeModule button pill icon trash">Borrar</a>';
+												echo '<a ref="#" class="button pill icon edit">Ocultar</a>'.EOL;
+												echo '</li>'.EOL;												
+											}
+											
+										}
+										?>								
+										</ul>
+										<div class="clear"><!-- BR --></div>			
+									</div>						
+									<div class="col_4 empty">
+										<p><a href="#" id="moduleList-3" class="addModule button icon add">Añadir modulo</a></p>
+										<ul id="zone3" class="ui-module-sortable">
+										<?php
+										foreach ($modules as $module) {
+										
+											if ($module->zone_id == 3) {
+												echo '<li id="module'.$module->id.'" class="blockModule">'.EOL;
+												echo '<a id="editModule'.$module->id.'" class="button pill icon edit">Editar</a>';
+												echo '<a href="#"  id="removeModule'.$module->id.'" class="removeModule button pill icon trash">Borrar</a>';
+												echo '<a ref="#" class="button pill icon edit">Ocultar</a>'.EOL;
+												echo '</li>'.EOL;												
+											}
+											
+										}
+										?>								
+										</ul>
+										<div class="clear"><!-- BR --></div>			
+									</div>	
+									<div class="col_3 empty">
+										<p><a href="#" id="moduleList-4" class="addModule button icon add">Añadir modulo</a></p>
+										<ul id="zone4" class="ui-module-sortable">
+										<?php
+										foreach ($modules as $module) {
+										
+											if ($module->zone_id == 4) {
+												echo '<li id="module'.$module->id.'" class="blockModule">'.EOL;
+												echo '<a id="editModule'.$module->id.'" class="button pill icon edit">Editar</a>';
+												echo '<a href="#"  id="removeModule'.$module->id.'" class="removeModule button pill icon trash">Borrar</a>';
+												echo '<a ref="#" class="button pill icon edit">Ocultar</a>'.EOL;
+												echo '</li>'.EOL;												
+											}
+											
+										}
+										?>								
+										</ul>										
+										<div class="clear"><!-- BR --></div>											
+									</div>
+									
+								</div>
+								<div class="clear"><!-- BR --></div>
+									
+							</div>

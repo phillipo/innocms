@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="<?php echo APP_CHARSET ?>">
+<title><?php echo $prefs->preferences_title ?></title>
+<link href="http://fonts.googleapis.com/css?family=Oxygen&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<?php Tag::css('admin/bootstrap/bootstrap') ?>
+<?php Tag::css('admin/bootstrap/bootstrap-responsive') ?>
+<?php echo Html::includeCss() ?>
+<!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+<!--[if lt IE 9]>
+<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+<?php
+$scripts = array(
+		// Jquery
+		'bootstrap/jquery',
+		// Bootstrap
+		'bootstrap/bootstrap.min',
+		// Others
+		'main'
+		);
+
+foreach ($scripts as $js) {
+	echo Tag::js('admin/'.$js).chr(10);	
+}
+?>
+</head>
+<body id="adminLayout">
+		
+	<div class="container">	
+		
+		<!-- NAVBAR -->
+		<div class="navbar">
+			<?php echo View::partial('admin/navbar',0,array('prefs'=>$prefs)).EOL ?>
+		</div>	
+		<div class="clear"><!-- BR --></div>	
+		<!-- fNAVBAR -->	
+	
+		<!-- CONTENT -->
+		<div class="row-fluid">
+	
+			<!-- LATERAL MENU -->	
+			<div id="menubar" class="span3">
+				<?php echo View::partial('admin/users/createItems').EOL ?>
+				<hr />
+				<?php echo View::partial('admin/users/statusList').EOL ?>
+			</div>
+			<!-- fLATERAL MENU -->
+		
+		
+			<!-- VIEW -->
+			<div id="content" class="span9">	
+			<?php echo View::content(); ?>
+			</div>
+			<!-- fVIEW -->		
+		
+		</div>
+		<!-- fCONTENT -->
+
+	</div>	
+		
+</body>
+</html>

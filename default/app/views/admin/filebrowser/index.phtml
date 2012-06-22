@@ -1,0 +1,78 @@
+<?php
+/*
+Author: Cesar Caballero Gallego
+Date: 25/04/2012 - 18:01:22
+File: index.phtml
+*/
+?>
+
+			<div id="main" class="pages">
+	
+				<div class="row-fluid">
+					<div class="span6"><h1>Ficheros</h1></div>
+					<div class="span6"><div class="pull-right"><?php echo View::partial('admin/createItems',0,array())?></div></div>
+				</div>
+					
+				<!-- BREADCRUMB -->
+				<?php echo View::partial('admin/breadcrumb')?>
+				<!-- fBREADCRUMB -->		
+		
+				<!-- UPLOAD -->
+				<?php echo View::partial('admin/upload')?>
+				<!-- fUPLOAD -->	
+				
+			
+				<?php View::content() ?>
+						
+				<!-- Opciones listado -->
+				<?php echo View::partial('admin/optionsLists',0, $optionsListData) ?>
+				<!-- fOpciones listado -->
+			
+				<!-- RESULTADOS -->
+				<div id="pageList">
+				<?php if (sizeof($fileList) > 0 ) { ?>			
+				
+					<?php echo Form::open('','post','id="ui-form"'); ?>	
+				
+					<!-- RESULTS TABLE -->
+					<table class="table table-bordered table-striped">
+					<thead>
+					<tr>
+						<th class="c_checker"><?php echo Form::check('ui-checkAll','1','class="ui-checkAll" title="Seleccionar/deseleccionar todos"',false)?></th>
+						<th class="c_extension">Tipo</th>
+						<th>Nombre</th>
+						<th class="c_date">Última modificación</th>
+						<th class="c_id">ID</th>
+					</tr>
+					</thead>
+					<tbody>
+					<?php foreach ($pages[$pageId] as $file) {	?>
+						<tr>
+						<td><input type="checkbox" id="<?php echo 'listID-'.$file['id'] ?>" name="listID[]" value="<?php echo $file['id'] ?>" title="Seleccionar / deseleccionar"></td>
+						<td><?php echo $file['type'] ?></td>
+						<td><a href="#" class="ui-file-info" id="<?php echo 'ui-file-info-'.$file['id'] ?>"><?php echo Innocms::trimText($file['name'],80) ?></a></td>
+						<td class="textCenter"><?php echo date('d-m-Y H:i:s',$file['date'])  ?></td>	
+						<td><?php echo $file['id'] ?></td>
+						</tr>
+					<?php } ?>
+					</tbody>
+					</table>
+					<!-- fRESULTS TABLE -->
+					
+					<?php echo Form::close() ?>	
+				
+					<!-- PAGINATION -->
+					<?php View::partial('admin/pagination', false, $paginationData); ?>
+					<!-- fPAGINATION -->			
+							
+				<?php } else { ?>
+				
+					<!-- PAGINATION -->
+					<?php View::partial('admin/noItems'); ?>
+					<!-- fPAGINATION -->						
+				<?php } ?>	
+												
+				</div>
+				<!-- RESULTS -->
+								
+			</div>

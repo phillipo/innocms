@@ -1,0 +1,22 @@
+[Fri, 15 Jun 12 11:31:06 +0200][DEBUG] DESCRIBE `content`
+[Fri, 15 Jun 12 11:31:06 +0200][DEBUG] 
+				SELECT content.id as id, content.id as rootId, content.*, attr.content_attribute_key, attr.content_attribute_value, (SELECT count(*) FROM content WHERE content_parent_id = rootId) as totalContents
+				FROM content INNER JOIN content_attributes as attr ON content.id = attr.content_id 
+				WHERE content_language_id = "1" AND content_attribute_key = "TITLE" AND content_type = "post" ORDER BY content_sort_order ASC
+[Fri, 15 Jun 12 11:31:07 +0200][DEBUG] SELECT * FROM content WHERE content.content_slug = "all" LIMIT 1
+[Fri, 15 Jun 12 11:31:07 +0200][DEBUG] SELECT * FROM content WHERE content.id = "0" LIMIT 1
+[Fri, 15 Jun 12 11:31:07 +0200][DEBUG] 
+				SELECT content.id as id, content.id as rootId, content.*, attr.content_attribute_key, attr.content_attribute_value, (SELECT count(*) FROM content WHERE content_parent_id = rootId) as totalContents
+				FROM content INNER JOIN content_attributes as attr ON content.id = attr.content_id 
+				WHERE content_language_id = "1" AND content_attribute_key = "TITLE" AND content_type = "category" AND content_parent_id = "0" ORDER BY content_attribute_value ASC
+[Fri, 15 Jun 12 13:31:59 +0200][DEBUG] DESCRIBE `content`
+[Fri, 15 Jun 12 13:31:59 +0200][DEBUG] 
+				SELECT content.id as id, content.id as rootId, content.*, attr.content_attribute_key, attr.content_attribute_value, (SELECT count(*) FROM content WHERE content_parent_id = rootId) as totalContents
+				FROM content INNER JOIN content_attributes as attr ON content.id = attr.content_id 
+				WHERE content_language_id = "1" AND content_attribute_key = "TITLE" AND content_type = "post" ORDER BY content_sort_order ASC
+[Fri, 15 Jun 12 13:31:59 +0200][DEBUG] SELECT * FROM content WHERE content.content_slug = "all" LIMIT 1
+[Fri, 15 Jun 12 13:31:59 +0200][DEBUG] SELECT * FROM content WHERE content.id = "0" LIMIT 1
+[Fri, 15 Jun 12 13:31:59 +0200][DEBUG] 
+				SELECT content.id as id, content.id as rootId, content.*, attr.content_attribute_key, attr.content_attribute_value, (SELECT count(*) FROM content WHERE content_parent_id = rootId) as totalContents
+				FROM content INNER JOIN content_attributes as attr ON content.id = attr.content_id 
+				WHERE content_language_id = "1" AND content_attribute_key = "TITLE" AND content_type = "category" AND content_parent_id = "0" ORDER BY content_attribute_value ASC

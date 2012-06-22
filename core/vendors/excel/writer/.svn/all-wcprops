@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svnroot/kumbia/!svn/ver/514/branches/1.0/core/vendors/excel/writer
+END
+format.php
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svnroot/kumbia/!svn/ver/514/branches/1.0/core/vendors/excel/writer/format.php
+END
+workbook.php
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svnroot/kumbia/!svn/ver/514/branches/1.0/core/vendors/excel/writer/workbook.php
+END
+BIFFwriter.php
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svnroot/kumbia/!svn/ver/514/branches/1.0/core/vendors/excel/writer/BIFFwriter.php
+END
+worksheet.php
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svnroot/kumbia/!svn/ver/514/branches/1.0/core/vendors/excel/writer/worksheet.php
+END
+parser.php
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svnroot/kumbia/!svn/ver/514/branches/1.0/core/vendors/excel/writer/parser.php
+END
+validator.php
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svnroot/kumbia/!svn/ver/514/branches/1.0/core/vendors/excel/writer/validator.php
+END

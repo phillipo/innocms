@@ -1,0 +1,45 @@
+<?php
+/*
+Author: Cesar Caballero Gallego
+Date: 07/02/2012 - 20:26:30
+File: statusList.phtml
+*/
+?>
+
+	<div id="categoryList">
+	
+		<h3>Categorias</h3>
+		
+		<?php 
+		
+		// Información sobre categoria actual
+		$current = Load::model('content')->getbyKey($category);	
+		$currentId = (empty($current)) ? 0 : $current->id;
+		$parentId = (empty($current)) ? 0 : $current->content_parent_id;
+		// Información sobre padre 
+		$parent = Load::model('content')->getbyId($parentId);
+		$parentSlug = (empty($parent)) ? '' : $parent->content_slug;
+		// Listado de hijos
+		$categoryList = Load::model('content')->getList(array('content_type'=>'category','parentId'=>$currentId,'order'=>'content_attribute_value ASC'));
+		
+		?>
+
+		<ul class="nav nav-list">
+		<?php if ($currentId > 0) { ?>
+			<li><?php echo Html::linkAction('index/'.$parentSlug, '...subir nivel')?></li>			
+		<?php } ?>
+		
+		<?php 
+			if (isset($categoryList) && sizeof($categoryList) > 0) {
+				foreach ($categoryList as $cat) {
+						
+					$catName = $cat->content_attribute_value;					
+					$total = $cat->totalContents + $cat->totalCategories;
+					
+					echo '<li>'.Html::linkAction('index/'.$cat->content_slug, $cat->content_attribute_value.' ('.$total.')','title="La categoria '.$catName.' está asociada a '.$total.' contenido/s" id="category'.$cat->id.'" class="ui-goChild"').'</li>';
+				}
+		}	
+		?>	
+		</ul>		
+				
+	</div>	

@@ -1,0 +1,61 @@
+<?php
+/*
+Author: Cesar Caballero Gallego
+Date: 27/04/2012 - 05:16:05
+File: html_header.php
+*/
+?>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="<?php echo APP_CHARSET ?>">
+<title><?php echo $prefs->preferences_title.' | '.Router::get('controller').' | '.Router::get('action') ?> </title>
+<link href="http://fonts.googleapis.com/css?family=Oxygen&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<?php Tag::css('admin/jquery-ui/style')?>
+<?php Tag::css('admin/bootstrap/bootstrap') ?>
+<?php Tag::css('admin/bootstrap/bootstrap-responsive') ?>
+<?php Tag::css('admin/structure')?>
+<?php echo Html::includeCss() ?>
+<link href="/templates/base.css" rel="stylesheet" type="text/css" media="screen" />
+<!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+<!--[if lt IE 9]>
+<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+<?php
+$scripts = array(
+		// Jquery
+		'jquery/jquery.min','jquery/jquery-ui.min',
+		// JqueryPlugins
+		'jquery/jquery.slugit','jquery/datepicker/jquery.ui.datepicker-es',
+		'jquery/jquery.datepicker-time','jquery/timepicker/jquery-ui-timepicker-es','jquery/jquery.dataTables.min',	
+		'jquery/jquery.tinyscrollbar.min',
+		'jquery/jquery.iTree',		
+		// Upload
+		'/plupload/plupload.full','plupload/i18n/es',
+		// Bootstrap
+		'bootstrap/bootstrap.min','bootstrap/bootbox',
+		// Plugins
+		'iModal','iAlert','iPopFile',
+		// Tiny
+		'tiny_mce/tiny_mce',
+		// Others
+		'main'
+		);
+
+foreach ($scripts as $js) {
+	echo Tag::js('admin/'.$js).EOL;	
+}
+?>
+
+<!-- 	'jquery/jquery.min','jquery/jquery.cookie','jquery/jquery.metadata', -->
+<!-- 	'jquery/jquery-ui.min','jquery/jquery.easing','jquery/jquery.cycle','jquery/jquery.treeview','jquery/jquery.slugit', -->
+<!-- 	'uploadify/jquery.uploadify.min','uploadify/swfobject', -->
+<!-- 	'jquery/datepicker/jquery.ui.datepicker-es', -->
+<!-- 	'tiny_mce/jquery.tinymce', -->
+<!-- 	'main' -->
+
+<script type="text/javascript">
+var iSection = '<?php echo Router::get('controller') ?>';
+</script>
+</head>

@@ -1,0 +1,49 @@
+<?php
+/*
+Author: Cesar Caballero Gallego
+Date: 25/04/2012 - 18:01:22
+File: index.phtml
+*/
+?>
+
+			<div id="main" class="pages span10">
+				
+				<?php View::content() ?>
+									
+				<?php if (sizeof($fileList) > 0 ) { ?>
+							
+				<ul class="thumbnails">
+				
+				<?php foreach ($fileList as $file) { ?>
+					
+					<li class="span2">
+						<div class="thumbnail">
+							<img src="/admin/filebrowser/resize/<?php echo $file['name'] ?>/crop/200/200" title="<?php echo $file['name'] ?>" width="100%" height="100%">
+							<div class="caption">
+								<label for="" class="radio">Seleccionar
+									<input type="radio" id="<?php echo 'imageId-'.$file['id'] ?>" name="imageId" value="<?php echo $file['id'] ?>" title="Seleccionar / deseleccionar">
+								</label>
+								<!-- 
+								<div class="span12">
+									<span class="span6">Peso: <?php echo $file['size'] ?></span>
+									<span class="span6">Fecha: <?php echo date('d-m-Y H:i:s', $file['date'])  ?></span>
+								</div>
+								 -->
+							</div>
+						</div>	
+					</li>
+				<?php } ?>
+				</ul>
+				
+				<?php } else { ?>
+				
+				<!-- Opciones listado -->
+				<?php echo View::partial('admin/noItems') ?>
+				<!-- fOpciones listado -->
+					
+				<?php } ?>	
+						
+				
+				
+				
+			</div>

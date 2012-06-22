@@ -1,0 +1,113 @@
+[Thu, 14 Jun 12 10:04:03 +0200][DEBUG] DESCRIBE `content`
+[Thu, 14 Jun 12 10:04:03 +0200][DEBUG] 
+				SELECT content.id as id, content.id as rootId, content.*, attr.content_attribute_key, attr.content_attribute_value, (SELECT count(*) FROM content WHERE content_parent_id = rootId) as totalContents
+				FROM content INNER JOIN content_attributes as attr ON content.id = attr.content_id 
+				WHERE content_language_id = "1" AND content_attribute_key = "TITLE" AND content_type = "post" ORDER BY content_sort_order ASC
+[Thu, 14 Jun 12 10:04:04 +0200][DEBUG] SELECT * FROM content WHERE content.content_slug = "all" LIMIT 1
+[Thu, 14 Jun 12 10:04:04 +0200][DEBUG] SELECT * FROM content WHERE content.id = "0" LIMIT 1
+[Thu, 14 Jun 12 10:04:04 +0200][DEBUG] 
+				SELECT content.id as id, content.id as rootId, content.*, attr.content_attribute_key, attr.content_attribute_value, (SELECT count(*) FROM content WHERE content_parent_id = rootId) as totalContents
+				FROM content INNER JOIN content_attributes as attr ON content.id = attr.content_id 
+				WHERE content_language_id = "1" AND content_attribute_key = "TITLE" AND content_type = "category" AND content_parent_id = "0" ORDER BY content_attribute_value ASC
+[Thu, 14 Jun 12 10:06:01 +0200][DEBUG] DESCRIBE `page`
+[Thu, 14 Jun 12 10:06:01 +0200][DEBUG] SELECT id,page_parent_id,page_image_id,page_user_id,page_language_id,page_slug,page_author,page_password,page_type,page_mime_type,page_template_id,page_template_params,page_created_at,page_modified_in,page_publish_up,page_publish_down,page_publish_expires,page_redirect,page_sort_order,page_status FROM page WHERE page_status = 'draft' ORDER BY page_parent_id ASC, page_sort_order ASC LIMIT 1
+[Thu, 14 Jun 12 12:01:13 +0200][DEBUG] DESCRIBE `page`
+[Thu, 14 Jun 12 12:01:13 +0200][DEBUG] SELECT id,page_parent_id,page_image_id,page_user_id,page_language_id,page_slug,page_author,page_password,page_type,page_mime_type,page_template_id,page_template_params,page_created_at,page_modified_in,page_publish_up,page_publish_down,page_publish_expires,page_redirect,page_sort_order,page_status FROM page WHERE page_status = 'draft' ORDER BY page_parent_id ASC, page_sort_order ASC LIMIT 1
+[Thu, 14 Jun 12 12:01:36 +0200][DEBUG] DESCRIBE `page`
+[Thu, 14 Jun 12 12:01:36 +0200][DEBUG] SELECT id,page_parent_id,page_image_id,page_user_id,page_language_id,page_slug,page_author,page_password,page_type,page_mime_type,page_template_id,page_template_params,page_created_at,page_modified_in,page_publish_up,page_publish_down,page_publish_expires,page_redirect,page_sort_order,page_status FROM page WHERE page_status = 'draft' ORDER BY page_parent_id ASC, page_sort_order ASC LIMIT 1
+[Thu, 14 Jun 12 12:01:46 +0200][DEBUG] DESCRIBE `page`
+[Thu, 14 Jun 12 12:01:46 +0200][DEBUG] SELECT id,page_parent_id,page_image_id,page_user_id,page_language_id,page_slug,page_author,page_password,page_type,page_mime_type,page_template_id,page_template_params,page_created_at,page_modified_in,page_publish_up,page_publish_down,page_publish_expires,page_redirect,page_sort_order,page_status FROM page WHERE page_status = 'draft' ORDER BY page_parent_id ASC, page_sort_order ASC LIMIT 1
+[Thu, 14 Jun 12 12:03:25 +0200][DEBUG] DESCRIBE `page`
+[Thu, 14 Jun 12 12:03:26 +0200][DEBUG] SELECT id,page_parent_id,page_image_id,page_user_id,page_language_id,page_slug,page_author,page_password,page_type,page_mime_type,page_template_id,page_template_params,page_created_at,page_modified_in,page_publish_up,page_publish_down,page_publish_expires,page_redirect,page_sort_order,page_status FROM page WHERE page_status = 'draft' ORDER BY page_parent_id ASC, page_sort_order ASC LIMIT 1
+[Thu, 14 Jun 12 12:04:17 +0200][DEBUG] DESCRIBE `page`
+[Thu, 14 Jun 12 12:04:17 +0200][DEBUG] SELECT id,page_parent_id,page_image_id,page_user_id,page_language_id,page_slug,page_author,page_password,page_type,page_mime_type,page_template_id,page_template_params,page_created_at,page_modified_in,page_publish_up,page_publish_down,page_publish_expires,page_redirect,page_sort_order,page_status FROM page WHERE page_status = 'draft' ORDER BY page_parent_id ASC, page_sort_order ASC LIMIT 1
+[Thu, 14 Jun 12 12:04:37 +0200][DEBUG] DESCRIBE `page`
+[Thu, 14 Jun 12 12:04:37 +0200][DEBUG] SELECT id,page_parent_id,page_image_id,page_user_id,page_language_id,page_slug,page_author,page_password,page_type,page_mime_type,page_template_id,page_template_params,page_created_at,page_modified_in,page_publish_up,page_publish_down,page_publish_expires,page_redirect,page_sort_order,page_status FROM page WHERE page_status = 'draft' ORDER BY page_parent_id ASC, page_sort_order ASC LIMIT 1
+[Thu, 14 Jun 12 12:05:04 +0200][DEBUG] DESCRIBE `page`
+[Thu, 14 Jun 12 12:05:04 +0200][DEBUG] SELECT id,page_parent_id,page_image_id,page_user_id,page_language_id,page_slug,page_author,page_password,page_type,page_mime_type,page_template_id,page_template_params,page_created_at,page_modified_in,page_publish_up,page_publish_down,page_publish_expires,page_redirect,page_sort_order,page_status FROM page WHERE page_status = 'draft' ORDER BY page_parent_id ASC, page_sort_order ASC LIMIT 1
+[Thu, 14 Jun 12 12:07:25 +0200][DEBUG] DESCRIBE `page`
+[Thu, 14 Jun 12 12:07:25 +0200][DEBUG] SELECT id,page_parent_id,page_image_id,page_user_id,page_language_id,page_slug,page_author,page_password,page_type,page_mime_type,page_template_id,page_template_params,page_created_at,page_modified_in,page_publish_up,page_publish_down,page_publish_expires,page_redirect,page_sort_order,page_status FROM page WHERE page_status = 'draft' ORDER BY page_parent_id ASC, page_sort_order ASC LIMIT 1
+[Thu, 14 Jun 12 12:07:51 +0200][DEBUG] DESCRIBE `page`
+[Thu, 14 Jun 12 12:07:51 +0200][DEBUG] SELECT id,page_parent_id,page_image_id,page_user_id,page_language_id,page_slug,page_author,page_password,page_type,page_mime_type,page_template_id,page_template_params,page_created_at,page_modified_in,page_publish_up,page_publish_down,page_publish_expires,page_redirect,page_sort_order,page_status FROM page WHERE page_status = 'draft' ORDER BY page_parent_id ASC, page_sort_order ASC LIMIT 1
+[Thu, 14 Jun 12 12:08:12 +0200][DEBUG] DESCRIBE `page`
+[Thu, 14 Jun 12 12:08:12 +0200][DEBUG] SELECT id,page_parent_id,page_image_id,page_user_id,page_language_id,page_slug,page_author,page_password,page_type,page_mime_type,page_template_id,page_template_params,page_created_at,page_modified_in,page_publish_up,page_publish_down,page_publish_expires,page_redirect,page_sort_order,page_status FROM page WHERE page_status = 'draft' ORDER BY page_parent_id ASC, page_sort_order ASC LIMIT 1
+[Thu, 14 Jun 12 12:11:25 +0200][DEBUG] DESCRIBE `page`
+[Thu, 14 Jun 12 12:11:25 +0200][DEBUG] SELECT id,page_parent_id,page_image_id,page_user_id,page_language_id,page_slug,page_author,page_password,page_type,page_mime_type,page_template_id,page_template_params,page_created_at,page_modified_in,page_publish_up,page_publish_down,page_publish_expires,page_redirect,page_sort_order,page_status FROM page WHERE page_status = 'draft' ORDER BY page_parent_id ASC, page_sort_order ASC LIMIT 1
+[Thu, 14 Jun 12 12:11:33 +0200][DEBUG] DESCRIBE `page`
+[Thu, 14 Jun 12 12:11:34 +0200][DEBUG] SELECT id,page_parent_id,page_image_id,page_user_id,page_language_id,page_slug,page_author,page_password,page_type,page_mime_type,page_template_id,page_template_params,page_created_at,page_modified_in,page_publish_up,page_publish_down,page_publish_expires,page_redirect,page_sort_order,page_status FROM page WHERE page_status = 'draft' ORDER BY page_parent_id ASC, page_sort_order ASC LIMIT 1
+[Thu, 14 Jun 12 14:26:49 +0200][DEBUG] DESCRIBE `content`
+[Thu, 14 Jun 12 14:26:49 +0200][DEBUG] 
+				SELECT content.id as id, content.id as rootId, content.*, attr.content_attribute_key, attr.content_attribute_value, (SELECT count(*) FROM content WHERE content_parent_id = rootId) as totalContents
+				FROM content INNER JOIN content_attributes as attr ON content.id = attr.content_id 
+				WHERE content_language_id = "1" AND content_attribute_key = "TITLE" AND content_type = "post" ORDER BY content_sort_order ASC
+[Thu, 14 Jun 12 14:26:49 +0200][DEBUG] SELECT * FROM content WHERE content.content_slug = "all" LIMIT 1
+[Thu, 14 Jun 12 14:26:49 +0200][DEBUG] SELECT * FROM content WHERE content.id = "0" LIMIT 1
+[Thu, 14 Jun 12 14:26:49 +0200][DEBUG] 
+				SELECT content.id as id, content.id as rootId, content.*, attr.content_attribute_key, attr.content_attribute_value, (SELECT count(*) FROM content WHERE content_parent_id = rootId) as totalContents
+				FROM content INNER JOIN content_attributes as attr ON content.id = attr.content_id 
+				WHERE content_language_id = "1" AND content_attribute_key = "TITLE" AND content_type = "category" AND content_parent_id = "0" ORDER BY content_attribute_value ASC
+[Thu, 14 Jun 12 14:26:55 +0200][DEBUG] DESCRIBE `users`
+[Thu, 14 Jun 12 14:26:55 +0200][DEBUG] SELECT users.id as user_id, users.*, usergroup.* 
+		FROM users INNER JOIN usergroup ON usergroup.id = users.usergroup_id ORDER BY user_name ASC
+[Thu, 14 Jun 12 15:51:29 +0200][DEBUG] DESCRIBE `content`
+[Thu, 14 Jun 12 15:51:29 +0200][DEBUG] 
+				SELECT content.id as id, content.id as rootId, content.*, attr.content_attribute_key, attr.content_attribute_value, (SELECT count(*) FROM content WHERE content_parent_id = rootId) as totalContents
+				FROM content INNER JOIN content_attributes as attr ON content.id = attr.content_id 
+				WHERE content_language_id = "1" AND content_attribute_key = "TITLE" AND content_type = "post" ORDER BY content_sort_order ASC
+[Thu, 14 Jun 12 15:51:29 +0200][DEBUG] SELECT * FROM content WHERE content.content_slug = "all" LIMIT 1
+[Thu, 14 Jun 12 15:51:29 +0200][DEBUG] SELECT * FROM content WHERE content.id = "0" LIMIT 1
+[Thu, 14 Jun 12 15:51:29 +0200][DEBUG] 
+				SELECT content.id as id, content.id as rootId, content.*, attr.content_attribute_key, attr.content_attribute_value, (SELECT count(*) FROM content WHERE content_parent_id = rootId) as totalContents
+				FROM content INNER JOIN content_attributes as attr ON content.id = attr.content_id 
+				WHERE content_language_id = "1" AND content_attribute_key = "TITLE" AND content_type = "category" AND content_parent_id = "0" ORDER BY content_attribute_value ASC
+[Thu, 14 Jun 12 15:51:31 +0200][DEBUG] DESCRIBE `content`
+[Thu, 14 Jun 12 15:51:31 +0200][DEBUG] DESCRIBE `content_attributes`
+[Thu, 14 Jun 12 15:51:31 +0200][DEBUG] SELECT * FROM content WHERE content.id = "39" LIMIT 1
+[Thu, 14 Jun 12 15:51:31 +0200][DEBUG] SELECT * FROM content_attributes WHERE content_attribute_key = "title" AND content_id = "39" LIMIT 1
+[Thu, 14 Jun 12 15:51:31 +0200][DEBUG] SELECT * FROM content_attributes WHERE content_attribute_key = "content" AND content_id = "39" LIMIT 1
+[Thu, 14 Jun 12 15:51:31 +0200][DEBUG] SELECT * FROM content_attributes WHERE content_attribute_key = "summary" AND content_id = "39" LIMIT 1
+[Thu, 14 Jun 12 15:51:31 +0200][DEBUG] SELECT * FROM content_attributes WHERE content_attribute_key = "seotitle" AND content_id = "39" LIMIT 1
+[Thu, 14 Jun 12 15:51:31 +0200][DEBUG] SELECT * FROM content_attributes WHERE content_attribute_key = "seodesc" AND content_id = "39" LIMIT 1
+[Thu, 14 Jun 12 15:51:31 +0200][DEBUG] SELECT * FROM content_attributes WHERE content_attribute_key = "seotags" AND content_id = "39" LIMIT 1
+[Thu, 14 Jun 12 15:51:31 +0200][DEBUG] SELECT * FROM content_attributes WHERE content_attribute_key = "featured_image" AND content_id = "39" LIMIT 1
+[Thu, 14 Jun 12 15:51:31 +0200][DEBUG] SELECT * FROM content_attributes WHERE content_attribute_key = "files" AND content_id = "39" LIMIT 1
+[Thu, 14 Jun 12 15:51:31 +0200][DEBUG] SELECT * FROM content WHERE content.id = "0" LIMIT 1
+[Thu, 14 Jun 12 15:51:31 +0200][DEBUG] 
+				SELECT content.id as id, content.id as rootId, content.*, attr.content_attribute_key, attr.content_attribute_value, (SELECT count(*) FROM content WHERE content_parent_id = rootId) as totalContents
+				FROM content INNER JOIN content_attributes as attr ON content.id = attr.content_id 
+				WHERE content_language_id = "1" AND content_attribute_key = "TITLE" AND content_type = "category" AND content_parent_id = "0" ORDER BY content_attribute_value
+[Thu, 14 Jun 12 15:51:31 +0200][DEBUG] 
+				SELECT content.id as id, content.id as rootId, content.*, attr.content_attribute_key, attr.content_attribute_value, (SELECT count(*) FROM content WHERE content_parent_id = rootId) as totalContents
+				FROM content INNER JOIN content_attributes as attr ON content.id = attr.content_id 
+				WHERE content_language_id = "1" AND content_attribute_key = "TITLE" AND content_type = "category" AND content_parent_id = "165" ORDER BY content_attribute_value
+[Thu, 14 Jun 12 15:51:31 +0200][DEBUG] 
+				SELECT content.id as id, content.id as rootId, content.*, attr.content_attribute_key, attr.content_attribute_value, (SELECT count(*) FROM content WHERE content_parent_id = rootId) as totalContents
+				FROM content INNER JOIN content_attributes as attr ON content.id = attr.content_id 
+				WHERE content_language_id = "1" AND content_attribute_key = "TITLE" AND content_type = "category" AND content_parent_id = "165" ORDER BY content_attribute_value
+[Thu, 14 Jun 12 15:51:31 +0200][DEBUG] 
+				SELECT content.id as id, content.id as rootId, content.*, attr.content_attribute_key, attr.content_attribute_value, (SELECT count(*) FROM content WHERE content_parent_id = rootId) as totalContents
+				FROM content INNER JOIN content_attributes as attr ON content.id = attr.content_id 
+				WHERE content_language_id = "1" AND content_attribute_key = "TITLE" AND content_type = "category" AND content_parent_id = "166" ORDER BY content_attribute_value
+[Thu, 14 Jun 12 15:51:31 +0200][DEBUG] 
+				SELECT content.id as id, content.id as rootId, content.*, attr.content_attribute_key, attr.content_attribute_value, (SELECT count(*) FROM content WHERE content_parent_id = rootId) as totalContents
+				FROM content INNER JOIN content_attributes as attr ON content.id = attr.content_id 
+				WHERE content_language_id = "1" AND content_attribute_key = "TITLE" AND content_type = "category" AND content_parent_id = "166" ORDER BY content_attribute_value
+[Thu, 14 Jun 12 15:51:31 +0200][DEBUG] 
+				SELECT content.id as id, content.id as rootId, content.*, attr.content_attribute_key, attr.content_attribute_value, (SELECT count(*) FROM content WHERE content_parent_id = rootId) as totalContents
+				FROM content INNER JOIN content_attributes as attr ON content.id = attr.content_id 
+				WHERE content_language_id = "1" AND content_attribute_key = "TITLE" AND content_type = "category" AND content_parent_id = "168" ORDER BY content_attribute_value
+[Thu, 14 Jun 12 15:51:31 +0200][DEBUG] 
+				SELECT content.id as id, content.id as rootId, content.*, attr.content_attribute_key, attr.content_attribute_value, (SELECT count(*) FROM content WHERE content_parent_id = rootId) as totalContents
+				FROM content INNER JOIN content_attributes as attr ON content.id = attr.content_id 
+				WHERE content_language_id = "1" AND content_attribute_key = "TITLE" AND content_type = "category" AND content_parent_id = "167" ORDER BY content_attribute_value
+[Thu, 14 Jun 12 15:51:56 +0200][DEBUG] DESCRIBE `content`
+[Thu, 14 Jun 12 15:51:56 +0200][DEBUG] 
+				SELECT content.id as id, content.id as rootId, content.*, attr.content_attribute_key, attr.content_attribute_value, (SELECT count(*) FROM content WHERE content_parent_id = rootId) as totalContents
+				FROM content INNER JOIN content_attributes as attr ON content.id = attr.content_id 
+				WHERE content_language_id = "1" AND content_attribute_key = "TITLE" AND content_type = "post" ORDER BY content_sort_order ASC
+[Thu, 14 Jun 12 15:51:56 +0200][DEBUG] SELECT * FROM content WHERE content.content_slug = "all" LIMIT 1
+[Thu, 14 Jun 12 15:51:56 +0200][DEBUG] SELECT * FROM content WHERE content.id = "0" LIMIT 1
+[Thu, 14 Jun 12 15:51:56 +0200][DEBUG] 
+				SELECT content.id as id, content.id as rootId, content.*, attr.content_attribute_key, attr.content_attribute_value, (SELECT count(*) FROM content WHERE content_parent_id = rootId) as totalContents
+				FROM content INNER JOIN content_attributes as attr ON content.id = attr.content_id 
+				WHERE content_language_id = "1" AND content_attribute_key = "TITLE" AND content_type = "category" AND content_parent_id = "0" ORDER BY content_attribute_value ASC

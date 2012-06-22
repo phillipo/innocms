@@ -1,0 +1,118 @@
+<?php
+/*
+Author: Cesar Caballero Gallego
+Date: 05/03/2012 - 19:02:24
+File: edit.phtml
+*/
+?>
+		
+			<div id="main">
+
+				<?php echo Form::open('admin/usergroup/create/','post') ?>		
+			
+				<h1>Grupos de usuarios</h1>
+				
+				<!-- BREADCRUMB -->
+				<?php echo View::partial('admin/breadcrumb')?>
+				<!-- fBREADCRUMB -->			
+			
+				<?php View::content() ?>
+		
+				<!-- TABS -->
+				<div class="tabbable tabs-left">		
+		
+					<!-- CONTROLS TABS -->
+					<ul class="nav nav-tabs">
+						<li class="active"><a href="#ui-usergroup-general" data-toggle="tab">Datos generales</a></li>
+						<li><a href="#ui-usergroup-users" data-toggle="tab">Usuarios</a></li>
+						<li><a href="#ui-usergroup-perms" data-toggle="tab">Permisos</a></li>
+					</ul>
+					<!-- fCONTROLS TABS -->
+								
+					<!-- CONTENT TABS -->			
+					<div class="tab-content">
+						
+						<div id="ui-usergroup-general" class="tab-pane active">
+						
+							<fieldset><legend>Datos generales</legend>
+							
+								<div class="frow">
+									<label for="nombre">Nombre</label>
+									<?php echo Form::text('definition.definition_value','class="col_10"', '') ?>
+								</div>
+							
+							</fieldset>
+							
+							<fieldset><legend>Estado</legend>
+								
+								<div class="frow">
+									<label for="usergroup_usergroup_active" class="checkbox">
+										<?php echo Form::check('usergroup.usergroup_active','1','', 0 )?>
+										Activo / Inactivo
+									</label>
+								</div>
+							
+							</fieldset>									
+							
+						
+						
+						</div>	
+						
+						<div id="ui-usergroup-users" class="tab-pane">
+	
+							<fieldset><legend>Usuarios asociados a este grupo</legend>
+							
+							<p>Los usuarios no seleccionados no forman parte de este grupo. Si desea añadir un usuario active su casilla asociada.</p>
+							
+							<?php
+							foreach ($userList as $user) { 
+								
+								echo '<div class="frow">'.EOL;
+								echo '	<label for="user_'.$user->user_id.'" class="checkbox">'.EOL;
+								echo '	'.Form::check('usergroup.users',$user->user_id);
+								echo '	'.$user->user_name.EOL;							
+								echo '	</label>'.EOL;
+								echo '</div>'.EOL;							
+								
+							} 
+							?>
+							
+							</fieldset>							
+						
+						</div>
+						
+						<div id="ui-usergroup-perms" class="tab-pane">
+						
+							<?php $perms = array('Páginas','Contenidos','Categorías','Menus','Modulos','Estadísticas'); ?>
+							<?php foreach ($perms as $perm) { ?>
+							<fieldset><legend><?php echo $perm ?></legend>
+								<?php for ($i = 0; $i < 3; $i++) { ?>
+								<div class="span3">
+									<ul class="unstyled">
+										<?php for ($j = 0; $j < 10; $j++) { ?>
+										<li><label class="checkbox">Opcion a dar permiso<input type="checkbox" /></label></li>
+										<?php } ?>
+									</ul>
+								</div>
+							<?php } ?>
+							</fieldset>
+							<?php } ?>					
+						
+						</div>
+						
+					</div>		
+					<!-- fCONTENT TABS -->
+				
+				</div>
+				
+				<p>&nbsp;</p>
+				<div class="form-actions">
+					<div class="btn-group">
+						<input type="submit" value="Guardar datos" class="btn btn-primary"/>
+					</div>		
+				</div>	
+				
+			<?php echo Form::close() ?>
+	
+			</div>			
+					

@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svnroot/kumbia/!svn/ver/920/branches/1.0/core/libs/db/adapters/pdo
+END
+pgsql.php
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svnroot/kumbia/!svn/ver/920/branches/1.0/core/libs/db/adapters/pdo/pgsql.php
+END
+informix.php
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svnroot/kumbia/!svn/ver/920/branches/1.0/core/libs/db/adapters/pdo/informix.php
+END
+mssql.php
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svnroot/kumbia/!svn/ver/920/branches/1.0/core/libs/db/adapters/pdo/mssql.php
+END
+interface.php
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svnroot/kumbia/!svn/ver/920/branches/1.0/core/libs/db/adapters/pdo/interface.php
+END
+sqlite.php
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svnroot/kumbia/!svn/ver/920/branches/1.0/core/libs/db/adapters/pdo/sqlite.php
+END
+oracle.php
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svnroot/kumbia/!svn/ver/920/branches/1.0/core/libs/db/adapters/pdo/oracle.php
+END
+mysql.php
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svnroot/kumbia/!svn/ver/920/branches/1.0/core/libs/db/adapters/pdo/mysql.php
+END
+access.php
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svnroot/kumbia/!svn/ver/920/branches/1.0/core/libs/db/adapters/pdo/access.php
+END

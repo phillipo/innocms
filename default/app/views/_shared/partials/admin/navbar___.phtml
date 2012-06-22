@@ -1,0 +1,70 @@
+
+	
+	
+		<div class="navbar-inner">
+			
+				<a href="/admin/dashboard" class="brand"><?php echo $prefs->preferences_title ?></a>
+				
+				<!-- NAVBAR -->
+				<div class="nav-collapse">
+				
+					<ul class="nav">
+					
+						<li class="dropdown">
+							<?php echo Html::link('admin/page','Datos<strong class="caret"></strong>','class="dropdown-toggle" data-target="#" data-toggle="dropdown"') ?>
+							
+							<ul class="dropdown-menu">
+								<li><?php echo Html::link('admin/page','Páginas') ?></li>
+								<li><?php echo Html::link('admin/content','Contenidos') ?></li>
+								<li><?php echo Html::link('admin/category','Categorias') ?></li>
+								<li><?php echo Html::link('admin/menu','Menús') ?></li>								
+							</ul>	
+						</li>
+						<li class="dropdown">
+							<?php echo Html::link('admin/menu','Apariencia<strong class="caret"></strong>','class="dropdown-toggle" data-target="#" data-toggle="dropdown"') ?>
+							
+							<ul class="dropdown-menu">
+								<li><?php echo Html::link('admin/template','Temas') ?></li>				
+								<li><?php echo Html::link('admin/module','Widgets') ?></li>
+							</ul>	
+						</li>
+						<li class="dropdown">
+							<?php echo Html::link('admin/users','Acceso<strong class="caret"></strong>','class="dropdown-toggle" data-target="#" data-toggle="dropdown"') ?>
+							
+							<ul class="dropdown-menu">
+								<li><?php echo Html::link('admin/users','Usuarios') ?></li>
+								<li><?php echo Html::link('admin/usergroup','Grupos') ?></li>
+								<li><?php echo Html::link('admin/userroles','Roles') ?></li>
+							</ul>
+						</li>	
+						<li class="dropdown">
+							<?php echo Html::link('admin/preferences','Ajustes<strong class="caret"></strong>','class="dropdown-toggle" data-target="#" data-toggle="dropdown"') ?>
+							
+							<ul class="dropdown-menu">
+								<li><?php echo Html::link('admin/preferences','Generales') ?></li>
+								<li><?php echo Html::link('admin/multimedia','Multimedia') ?></li>
+								<li><?php echo Html::link('admin/module','Módulos') ?></li>								
+								<li><?php echo Html::link('admin/language','Idiomas') ?></li>
+							</ul>
+						</li>
+						
+					</ul>
+					
+						<?php echo Form::open(null,'post','class="navbar-search pull-left"').EOL ?>
+						<?php echo Form::text('searchTerm','class="search-query span2" placeholder="Search"', $searchTerm).EOL ?>
+						<?php //echo Form::submit('Buscar', 'class="ui-search btn"').EOL ?>
+						<?php echo Form::close().EOL ?>
+				
+				</div>
+				<!-- fNAVBAR -->
+				<ul class="nav pull-right">
+					<li>
+						<li><a href="admin/profile">{Nombre usuario}</a>
+					</li>					
+					<li>
+						<li><a href="login.htm">Cerrar sesión</a>
+					</li>
+				</ul>
+				
+			
+		</div>
